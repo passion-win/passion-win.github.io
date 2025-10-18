@@ -1,0 +1,26 @@
+pre {
+  position: relative; /* 让复制按钮相对代码块定位 */
+}
+
+.copy-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+pre:hover .copy-btn {
+  opacity: 1; /* 鼠标悬浮代码块时显示按钮 */
+}
+
+.copy-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
