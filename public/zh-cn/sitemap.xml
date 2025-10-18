@@ -2,147 +2,147 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.com/</loc>
+    <loc>https://passion-win.github.io/</loc>
     <lastmod>2025-10-18T16:31:22+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/en/"
+                href="https://passion-win.github.io/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://example.com/ar/"
+                href="https://passion-win.github.io/ar/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://example.com/"
+                href="https://passion-win.github.io/"
                 />
   </url><url>
-    <loc>https://example.com/post/</loc>
+    <loc>https://passion-win.github.io/post/</loc>
     <lastmod>2025-10-18T16:31:22+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://example.com/ar/post/"
+                href="https://passion-win.github.io/ar/post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://example.com/post/"
+                href="https://passion-win.github.io/post/"
                 />
   </url><url>
-    <loc>https://example.com/p/%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://passion-win.github.io/p/%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2025-10-18T16:31:22+08:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/</loc>
+    <loc>https://passion-win.github.io/categories/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/en/categories/"
+                href="https://passion-win.github.io/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://example.com/ar/categories/"
+                href="https://passion-win.github.io/ar/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://example.com/categories/"
+                href="https://passion-win.github.io/categories/"
                 />
   </url><url>
-    <loc>https://example.com/p/test-chinese/</loc>
+    <loc>https://passion-win.github.io/p/test-chinese/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/test/</loc>
+    <loc>https://passion-win.github.io/categories/test/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/%E6%B5%8B%E8%AF%95/</loc>
+    <loc>https://passion-win.github.io/categories/%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/archives/</loc>
+    <loc>https://passion-win.github.io/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/page/</loc>
+    <loc>https://passion-win.github.io/page/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/css/</loc>
+    <loc>https://passion-win.github.io/tags/css/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/html/</loc>
+    <loc>https://passion-win.github.io/tags/html/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/markdown/</loc>
+    <loc>https://passion-win.github.io/tags/markdown/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/p/markdown-syntax-guide/</loc>
+    <loc>https://passion-win.github.io/p/markdown-syntax-guide/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/syntax/</loc>
+    <loc>https://passion-win.github.io/categories/syntax/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/</loc>
+    <loc>https://passion-win.github.io/tags/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/en/tags/"
+                href="https://passion-win.github.io/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://example.com/ar/tags/"
+                href="https://passion-win.github.io/ar/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://example.com/tags/"
+                href="https://passion-win.github.io/tags/"
                 />
   </url><url>
-    <loc>https://example.com/categories/themes/</loc>
+    <loc>https://passion-win.github.io/categories/themes/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/themes/</loc>
+    <loc>https://passion-win.github.io/tags/themes/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/p/placeholder-text/</loc>
+    <loc>https://passion-win.github.io/p/placeholder-text/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-                href="https://example.com/ar/p/%D9%85%D8%AB%D8%A7%D9%84-%D9%86%D8%B5/"
+                href="https://passion-win.github.io/ar/p/%D9%85%D8%AB%D8%A7%D9%84-%D9%86%D8%B5/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://example.com/p/placeholder-text/"
+                href="https://passion-win.github.io/p/placeholder-text/"
                 />
   </url><url>
-    <loc>https://example.com/tags/tag-with-whitespaces/</loc>
+    <loc>https://passion-win.github.io/tags/tag-with-whitespaces/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/test-with-whitespaces/</loc>
+    <loc>https://passion-win.github.io/categories/test-with-whitespaces/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/text/</loc>
+    <loc>https://passion-win.github.io/tags/text/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/p/math-typesetting/</loc>
+    <loc>https://passion-win.github.io/p/math-typesetting/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/emoji/</loc>
+    <loc>https://passion-win.github.io/tags/emoji/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/p/emoji-support/</loc>
+    <loc>https://passion-win.github.io/p/emoji-support/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/links/</loc>
+    <loc>https://passion-win.github.io/links/</loc>
   </url><url>
-    <loc>https://example.com/search/</loc>
+    <loc>https://passion-win.github.io/search/</loc>
   </url><url>
-    <loc>https://example.com/%E5%85%B3%E4%BA%8E/</loc>
+    <loc>https://passion-win.github.io/%E5%85%B3%E4%BA%8E/</loc>
   </url>
 </urlset>

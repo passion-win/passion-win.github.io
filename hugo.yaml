@@ -1,9 +1,9 @@
 # 站点基础配置
-baseurl: https://example.com/           # 网站根URL
+baseurl: https://passion-win.github.io/           # 网站根URL
 languageCode: en-us                     # 默认语言代码
 theme: hugo-theme-stack                 # 使用的主题名称
 title: 博客                     # 网站标题
-copyright: 观澜              # 版权信息
+copyright: win              # 版权信息
 
 # 国际化配置
 # 支持的语言: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
@@ -24,7 +24,7 @@ languages:
                 subtitle: Example description  # 侧边栏副标题
     zh-cn:
         languageName: 中文
-        title: 我的博客
+        title: win
         weight: 1
         params:
             sidebar:
@@ -71,7 +71,7 @@ params:
 
     # 日期格式
     dateFormat:
-        published: Jan 02, 2006        # 发布日期格式
+        published: Jan 18, 2025        # 发布日期格式
         lastUpdated: Jan 02, 2006 15:04 MST  # 最后更新日期格式
 
     # 侧边栏设置
@@ -79,9 +79,9 @@ params:
         emoji: 🍥                      # 表情图标
         subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.  # 副标题
         avatar:
-            enabled: true              # 是否显示头像
-            local: true                # 是否使用本地图片
-            src: img/avatar.png        # 头像路径
+            enabled: false         # 是否显示头像
+            local: false                # 是否使用本地图片
+            src: /img/maomao.jpg        # 头像路径
 
     # 文章设置
     article:
@@ -158,9 +158,10 @@ menu:
     social:                            # 社交链接菜单
         - identifier: github
           name: GitHub
-          url: https://github.com/CaiJimmy/hugo-theme-stack
+          url: https://github.com/passion-win/passion-win.github.io
           params:
               icon: brand-github       # 图标名称
+         
 
 # 相关文章设置
 related:
