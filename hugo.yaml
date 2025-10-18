@@ -7,7 +7,7 @@ copyright: 观澜              # 版权信息
 
 # 国际化配置
 # 支持的语言: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
-DefaultContentLanguage: en              # 默认内容语言
+DefaultContentLanguage: zh-cn            # 默认内容语言
 
 # 如果默认语言是中文/日文/韩文，需设置为true
 # 这将使.Summary和.WordCount对CJK语言正常工作
@@ -18,17 +18,17 @@ languages:
     en:
         languageName: English           # 语言显示名称
         title: Example Site             # 该语言下的网站标题
-        weight: 1                       # 权重（排序用）
+        weight: 2                     # 权重（排序用）
         params:
             sidebar:
                 subtitle: Example description  # 侧边栏副标题
     zh-cn:
         languageName: 中文
-        title: 演示站点
-        weight: 2
+        title: 我的博客
+        weight: 1
         params:
             sidebar:
-                subtitle: 演示说明
+                subtitle: 纯记录、分享
     ar:
         languageName: عربي
         languagedirection: rtl          # 文本方向（阿拉伯语从右到左）
@@ -66,8 +66,8 @@ params:
 
     # 页脚设置
     footer:
-        since: 2020                    # 起始年份
-        customText:                    # 自定义文本
+        since: 2025                   # 起始年份
+        customText: "欢迎来交流~"                   # 自定义文本
 
     # 日期格式
     dateFormat:
