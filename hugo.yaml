@@ -24,7 +24,7 @@ languages:
                 subtitle: Example description  # 侧边栏副标题
     zh-cn:
         languageName: 中文
-        title: win
+        title:   win
         weight: 1
         params:
             sidebar:

@@ -7,10 +7,18 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>win</copyright>
-        <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://passion-win.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 19 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://passion-win.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Git</title>
+        <link>https://passion-win.github.io/categories/git/</link>
+        <pubDate>Sun, 19 Oct 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://passion-win.github.io/categories/git/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Test</title>
         <link>https://passion-win.github.io/categories/test/</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+        <pubDate>Sun, 19 Oct 2025 00:00:00 +0000</pubDate>
         
         <guid>https://passion-win.github.io/categories/test/</guid>
         <description>&lt;img src="https://passion-win.github.io/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
