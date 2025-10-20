@@ -296,8 +296,8 @@
     
     
     <p>Hugo + GitHub搭建个人博客</p>
-<p>首先安装下载  Hugo和Git,并且注册一个GitHub账号，Hugo一定要选择Extended版本。</p>
-<p>打开终端，按下win+R,输入cmd，回车进入终端，输入以下命令，验证一下安装是否成功了吗？</p>
+<p>首先安装下载  Hugo和Git,并且注册一个GitHub账号，Hugo一定要选择<code>Extended</code>版本。</p>
+<p>打开终端，按下<code>win+R</code>,输入<code>cmd</code>，回车进入终端，输入以下命令，验证一下安装是否成功了吗？</p>
 <p><code>git --version</code></p>
 <p><code>hugo version</code></p>
 <p>如果能看到版本号，说明安装成功了</p>
@@ -309,8 +309,8 @@
 <p><code>cd my-blog</code></p>
 <p><code>git init</code></p>
 <p>添加主题</p>
-<p>找到Hugo官网，选择主题，跳转到Github,点tag,下载最新版zip源码包</p>
-<p>解压缩到themes文件夹，并将名字中的版本号去掉</p>
+<p>找到Hugo官网，选择主题，跳转到Github,点<code>tag</code>,下载最新版zip源码包</p>
+<p>解压缩到<code>themes</code>文件夹，并将名字中的版本号去掉</p>
 <p><img src="https://telegraph-image-5tj.pages.dev/file/AgACAgUAAyEGAAS6dLpwAAMIaPOdoDP41HIYSdPL6PtG1KOY9UUAAi8LaxspIaFXF3C7MOihYicBAAMCAAN4AAM2BA.png"
 	
 	
@@ -322,212 +322,429 @@
 <p>配置主题</p>
 <p>在 <code>my-blog</code> 目录下，执行以下命令（仅针对本项目，功能是提取作者的演示案例作为初始项目，并清除作者的演示案例）</p>
 <p>强制删除当前目录的 content 文件夹（若存在）
-Remove-Item -Path &ldquo;content&rdquo; -Recurse -Force -ErrorAction SilentlyContinue</p>
+<code>Remove-Item -Path &quot;content&quot; -Recurse -Force -ErrorAction SilentlyContinue</code></p>
 <p>将主题示例的 content 复制到当前目录（xcopy在PowerShell中可直接使用）
-xcopy &ldquo;themes\hugo-theme-stack\exampleSite\content&rdquo; &ldquo;content&rdquo; /E /I /H /Y</p>
+<code>xcopy &quot;themes\hugo-theme-stack\exampleSite\content&quot; &quot;content&quot; /E /I /H /Y</code></p>
 <p>删除 exampleSite 文件夹
-Remove-Item -Path &ldquo;themes\hugo-theme-stack\exampleSite&rdquo; -Recurse -Force -ErrorAction SilentlyContinue</p>
+<code>Remove-Item -Path &quot;themes\hugo-theme-stack\exampleSite&quot; -Recurse -Force -ErrorAction SilentlyContinue</code></p>
 <p>删除 rich-content 文件夹
-Remove-Item -Path &ldquo;content/post/rich-content&rdquo; -Recurse -Force -ErrorAction SilentlyContinue</p>
-<p>删除hugo.toml，并创建hugo.yaml (进入相应文件夹删除创建即可)</p>
-<p>将下面模板代码完整复制到config.yaml文件中，根据注释修改你的信息</p>
-<p>#站点基础配置
-baseurl: <a class="link" href="https://example.com/"  target="_blank" rel="noopener"
-    >https://example.com/</a>           # 网站根URL
-languageCode: en-us                     # 默认语言代码
-theme: hugo-theme-stack                 # 使用的主题名称
-title: Example Site                     # 网站标题
-copyright: Example Person               # 版权信息</p>
-<p>#国际化配置
-#支持的语言: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
-DefaultContentLanguage: en              # 默认内容语言</p>
-<p>#如果默认语言是中文/日文/韩文，需设置为true
-#这将使.Summary和.WordCount对CJK语言正常工作
-hasCJKLanguage: false</p>
-<p>#多语言详细配置
-languages:
-en:
-languageName: English           # 语言显示名称
-title: Example Site             # 该语言下的网站标题
-weight: 1                       # 权重（排序用）
-params:
-sidebar:
-subtitle: Example description  # 侧边栏副标题
-zh-cn:
-languageName: 中文
-title: 演示站点
-weight: 2
-params:
-sidebar:
-subtitle: 演示说明
-ar:
-languageName: عربي
-languagedirection: rtl          # 文本方向（阿拉伯语从右到左）
-title: موقع تجريبي
-weight: 3
-params:
-sidebar:
-subtitle: وصف تجريبي</p>
-<p>#第三方服务配置
-services:
-# Disqus评论系统（使用前需修改为你的shortname）
-disqus:
-shortname: &ldquo;hugo-theme-stack&rdquo;
-# Google Analytics跟踪ID
-googleAnalytics:
-id:                             # 填入你的GA跟踪ID</p>
-<p>#分页设置
-pagination:
-pagerSize: 3                        # 分页器显示页码数量</p>
-<p>#永久链接格式
-permalinks:
-post: /p/:slug/                     # 文章URL格式
-page: /:slug/                       # 页面URL格式</p>
-<p>#主题参数配置
-params:
-mainSections:
-- post                         # 主要内容区域
-featuredImageField: image          # 特色图片字段名
-rssFullContent: true               # RSS是否包含全文
-favicon:                           # 网站图标路径，如：/favicon.ico</p>
-<pre><code># 页脚设置
-footer:
-    since: 2020                    # 起始年份
-    customText:                    # 自定义文本
-
-# 日期格式
-dateFormat:
-    published: Jan 02, 2006        # 发布日期格式
-    lastUpdated: Jan 02, 2006 15:04 MST  # 最后更新日期格式
-
-# 侧边栏设置
-sidebar:
-    emoji: 🍥                      # 表情图标
-    subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.  # 副标题
-    avatar:
-        enabled: true              # 是否显示头像
-        local: true                # 是否使用本地图片
-        src: img/avatar.png        # 头像路径
-
-# 文章设置
-article:
-    math: false                    # 是否支持数学公式
-    toc: true                      # 是否显示目录
-    readingTime: true              # 是否显示阅读时间
-    license:
-        enabled: true              # 是否显示版权信息
-        default: Licensed under CC BY-NC-SA 4.0  # 默认许可证
-
-# 评论系统配置
-comments:
-    enabled: true                  # 启用评论
-    provider: disqus               # 评论提供商
-
-    # 各评论系统的具体配置
-    disqusjs: {...}                # DisqusJS配置
-    utterances: {...}              # Utterances配置（GitHub-based）
-    beaudar: {...}                 # Beaudar配置
-    remark42: {...}                # Remark42配置
-    vssue: {...}                   # Vssue配置
-    waline: {...}                  # Waline配置
-    twikoo: {...}                  # Twikoo配置
-    cactus: {...}                  # Cactus Chat配置
-    giscus: {...}                  # Giscus配置（GitHub Discussions）
-    gitalk: {...}                  # Gitalk配置
-    cusdis: {...}                  # Cusdis配置
-
-# 小工具配置
-widgets:
-    homepage:                      # 首页小工具
-        - type: search             # 搜索框
-        - type: archives           # 文章归档
-          params:
-              limit: 5             # 显示数量
-        - type: categories         # 分类
-          params:
-              limit: 10
-        - type: tag-cloud          # 标签云
-          params:
-              limit: 10
-    page:
-        - type: toc                # 页面目录
-
-# OpenGraph设置（社交媒体分享）
-opengraph:
-    twitter:
-        site:                      # Twitter用户名
-        card: summary_large_image  # 卡片类型：summary或summary_large_image
-
-# 默认图片设置
-defaultImage:
-    opengraph:
-        enabled: false             # 是否启用
-        local: false               # 是否使用本地图片
-        src:                       # 图片路径
-
-# 颜色方案
-colorScheme:
-    toggle: true                   # 是否显示切换按钮
-    default: auto                  # 默认模式：auto, light, dark
-
-# 图片处理
-imageProcessing:
-    cover:
-        enabled: true              # 处理封面图片
-    content:
-        enabled: true              # 处理内容图片
-</code></pre>
-<p>#自定义菜单配置
-menu:
-main: []                           # 主导航菜单</p>
-<pre><code>social:                            # 社交链接菜单
-    - identifier: github
-      name: GitHub
-      url: https://github.com/CaiJimmy/hugo-theme-stack
-      params:
-          icon: brand-github       # 图标名称
-</code></pre>
-<p>#相关文章设置
-related:
-includeNewer: true                 # 是否包含较新文章
-threshold: 60                      # 相关度阈值
-toLower: false                     # 是否忽略大小写
-indices:
-- name: tags                   # 使用标签作为关联依据
-weight: 100                  # 权重
-- name: categories             # 使用分类作为关联依据
-weight: 200</p>
-<p>#Markdown渲染设置
-markup:
-goldmark:
-extensions:
-passthrough:
-enable: true           # 启用原始HTML通过
-delimiters:
-block:             # 块级分隔符
-- - </p>
-\[
-                          - \]<p>
-- - </p>
-$$
-                          - $$<p>
-inline:            # 行内分隔符
-- - \(
-                          - \)
-renderer:
-unsafe: true               # 允许不安全HTML（直接渲染HTML内容）
-tableOfContents:
-endLevel: 4                    # 目录结束级别
-ordered: true                  # 是否有序
-startLevel: 2                  # 目录开始级别
-highlight:
-noClasses: false               # 是否使用内联样式
-codeFences: true               # 启用代码围栏
-guessSyntax: true              # 自动猜测语法
-lineNoStart: 1                 # 行号起始值
-lineNos: true                  # 显示行号
-lineNumbersInTable: true       # 在表格中显示行号
-tabWidth: 4                    # 制表符宽度</p>
+<code>Remove-Item -Path &quot;content/post/rich-content&quot; -Recurse -Force -ErrorAction SilentlyContinue</code></p>
+<p>删除hugo.toml，并创建hugo.yaml (进入相应文件夹中删除创建即可)</p>
+<p>将下面模板代码完整复制到<code>config.yaml</code>文件中，根据注释修改你的信息
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">#站点基础配置
+</span></span><span class="line"><span class="cl">baseurl: https://example.com/           # 网站根URL
+</span></span><span class="line"><span class="cl">languageCode: en-us                     # 默认语言代码
+</span></span><span class="line"><span class="cl">theme: hugo-theme-stack                 # 使用的主题名称
+</span></span><span class="line"><span class="cl">title: Example Site                     # 网站标题
+</span></span><span class="line"><span class="cl">copyright: Example Person               # 版权信息
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">#国际化配置
+</span></span><span class="line"><span class="cl">#支持的语言: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
+</span></span><span class="line"><span class="cl">DefaultContentLanguage: en              # 默认内容语言
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">#如果默认语言是中文/日文/韩文，需设置为true
+</span></span><span class="line"><span class="cl">#这将使.Summary和.WordCount对CJK语言正常工作
+</span></span><span class="line"><span class="cl">hasCJKLanguage: false
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">#多语言详细配置
+</span></span><span class="line"><span class="cl">languages:
+</span></span><span class="line"><span class="cl">    en:
+</span></span><span class="line"><span class="cl">        languageName: English           # 语言显示名称
+</span></span><span class="line"><span class="cl">        title: Example Site             # 该语言下的网站标题
+</span></span><span class="line"><span class="cl">        weight: 1                       # 权重（排序用）
+</span></span><span class="line"><span class="cl">        params:
+</span></span><span class="line"><span class="cl">            sidebar:
+</span></span><span class="line"><span class="cl">                subtitle: Example description  # 侧边栏副标题
+</span></span><span class="line"><span class="cl">    zh-cn:
+</span></span><span class="line"><span class="cl">        languageName: 中文
+</span></span><span class="line"><span class="cl">        title: 演示站点
+</span></span><span class="line"><span class="cl">        weight: 2
+</span></span><span class="line"><span class="cl">        params:
+</span></span><span class="line"><span class="cl">            sidebar:
+</span></span><span class="line"><span class="cl">                subtitle: 演示说明
+</span></span><span class="line"><span class="cl">    ar:
+</span></span><span class="line"><span class="cl">        languageName: عربي
+</span></span><span class="line"><span class="cl">        languagedirection: rtl          # 文本方向（阿拉伯语从右到左）
+</span></span><span class="line"><span class="cl">        title: موقع تجريبي
+</span></span><span class="line"><span class="cl">        weight: 3
+</span></span><span class="line"><span class="cl">        params:
+</span></span><span class="line"><span class="cl">            sidebar:
+</span></span><span class="line"><span class="cl">                subtitle: وصف تجريبي
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">#第三方服务配置
+</span></span><span class="line"><span class="cl">services:
+</span></span><span class="line"><span class="cl">    # Disqus评论系统（使用前需修改为你的shortname）
+</span></span><span class="line"><span class="cl">    disqus:
+</span></span><span class="line"><span class="cl">        shortname: &#34;hugo-theme-stack&#34;
+</span></span><span class="line"><span class="cl">    # Google Analytics跟踪ID
+</span></span><span class="line"><span class="cl">    googleAnalytics:
+</span></span><span class="line"><span class="cl">        id:                             # 填入你的GA跟踪ID
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">#分页设置
+</span></span><span class="line"><span class="cl">pagination:
+</span></span><span class="line"><span class="cl">    pagerSize: 3                        # 分页器显示页码数量
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">#永久链接格式
+</span></span><span class="line"><span class="cl">permalinks:
+</span></span><span class="line"><span class="cl">    post: /p/:slug/                     # 文章URL格式
+</span></span><span class="line"><span class="cl">    page: /:slug/                       # 页面URL格式
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">#主题参数配置
+</span></span><span class="line"><span class="cl">params:
+</span></span><span class="line"><span class="cl">    mainSections:
+</span></span><span class="line"><span class="cl">        - post                         # 主要内容区域
+</span></span><span class="line"><span class="cl">    featuredImageField: image          # 特色图片字段名
+</span></span><span class="line"><span class="cl">    rssFullContent: true               # RSS是否包含全文
+</span></span><span class="line"><span class="cl">    favicon:                           # 网站图标路径，如：/favicon.ico
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    # 页脚设置
+</span></span><span class="line"><span class="cl">    footer:
+</span></span><span class="line"><span class="cl">        since: 2020                    # 起始年份
+</span></span><span class="line"><span class="cl">        customText:                    # 自定义文本
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    # 日期格式
+</span></span><span class="line"><span class="cl">    dateFormat:
+</span></span><span class="line"><span class="cl">        published: Jan 02, 2006        # 发布日期格式
+</span></span><span class="line"><span class="cl">        lastUpdated: Jan 02, 2006 15:04 MST  # 最后更新日期格式
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    # 侧边栏设置
+</span></span><span class="line"><span class="cl">    sidebar:
+</span></span><span class="line"><span class="cl">        emoji: 🍥                      # 表情图标
+</span></span><span class="line"><span class="cl">        subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.  # 副标题
+</span></span><span class="line"><span class="cl">        avatar:
+</span></span><span class="line"><span class="cl">            enabled: true              # 是否显示头像
+</span></span><span class="line"><span class="cl">            local: true                # 是否使用本地图片
+</span></span><span class="line"><span class="cl">            src: img/avatar.png        # 头像路径
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    # 文章设置
+</span></span><span class="line"><span class="cl">    article:
+</span></span><span class="line"><span class="cl">        math: false                    # 是否支持数学公式
+</span></span><span class="line"><span class="cl">        toc: true                      # 是否显示目录
+</span></span><span class="line"><span class="cl">        readingTime: true              # 是否显示阅读时间
+</span></span><span class="line"><span class="cl">        license:
+</span></span><span class="line"><span class="cl">            enabled: true              # 是否显示版权信息
+</span></span><span class="line"><span class="cl">            default: Licensed under CC BY-NC-SA 4.0  # 默认许可证
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    # 评论系统配置
+</span></span><span class="line"><span class="cl">    comments:
+</span></span><span class="line"><span class="cl">        enabled: true                  # 启用评论
+</span></span><span class="line"><span class="cl">        provider: disqus               # 评论提供商
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        # 各评论系统的具体配置
+</span></span><span class="line"><span class="cl">        disqusjs: {...}                # DisqusJS配置
+</span></span><span class="line"><span class="cl">        utterances: {...}              # Utterances配置（GitHub-based）
+</span></span><span class="line"><span class="cl">        beaudar: {...}                 # Beaudar配置
+</span></span><span class="line"><span class="cl">        remark42: {...}                # Remark42配置
+</span></span><span class="line"><span class="cl">        vssue: {...}                   # Vssue配置
+</span></span><span class="line"><span class="cl">        waline: {...}                  # Waline配置
+</span></span><span class="line"><span class="cl">        twikoo: {...}                  # Twikoo配置
+</span></span><span class="line"><span class="cl">        cactus: {...}                  # Cactus Chat配置
+</span></span><span class="line"><span class="cl">        giscus: {...}                  # Giscus配置（GitHub Discussions）
+</span></span><span class="line"><span class="cl">        gitalk: {...}                  # Gitalk配置
+</span></span><span class="line"><span class="cl">        cusdis: {...}                  # Cusdis配置
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    # 小工具配置
+</span></span><span class="line"><span class="cl">    widgets:
+</span></span><span class="line"><span class="cl">        homepage:                      # 首页小工具
+</span></span><span class="line"><span class="cl">            - type: search             # 搜索框
+</span></span><span class="line"><span class="cl">            - type: archives           # 文章归档
+</span></span><span class="line"><span class="cl">              params:
+</span></span><span class="line"><span class="cl">                  limit: 5             # 显示数量
+</span></span><span class="line"><span class="cl">            - type: categories         # 分类
+</span></span><span class="line"><span class="cl">              params:
+</span></span><span class="line"><span class="cl">                  limit: 10
+</span></span><span class="line"><span class="cl">            - type: tag-cloud          # 标签云
+</span></span><span class="line"><span class="cl">              params:
+</span></span><span class="line"><span class="cl">                  limit: 10
+</span></span><span class="line"><span class="cl">        page:
+</span></span><span class="line"><span class="cl">            - type: toc                # 页面目录
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    # OpenGraph设置（社交媒体分享）
+</span></span><span class="line"><span class="cl">    opengraph:
+</span></span><span class="line"><span class="cl">        twitter:
+</span></span><span class="line"><span class="cl">            site:                      # Twitter用户名
+</span></span><span class="line"><span class="cl">            card: summary_large_image  # 卡片类型：summary或summary_large_image
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    # 默认图片设置
+</span></span><span class="line"><span class="cl">    defaultImage:
+</span></span><span class="line"><span class="cl">        opengraph:
+</span></span><span class="line"><span class="cl">            enabled: false             # 是否启用
+</span></span><span class="line"><span class="cl">            local: false               # 是否使用本地图片
+</span></span><span class="line"><span class="cl">            src:                       # 图片路径
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    # 颜色方案
+</span></span><span class="line"><span class="cl">    colorScheme:
+</span></span><span class="line"><span class="cl">        toggle: true                   # 是否显示切换按钮
+</span></span><span class="line"><span class="cl">        default: auto                  # 默认模式：auto, light, dark
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    # 图片处理
+</span></span><span class="line"><span class="cl">    imageProcessing:
+</span></span><span class="line"><span class="cl">        cover:
+</span></span><span class="line"><span class="cl">            enabled: true              # 处理封面图片
+</span></span><span class="line"><span class="cl">        content:
+</span></span><span class="line"><span class="cl">            enabled: true              # 处理内容图片
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">#自定义菜单配置
+</span></span><span class="line"><span class="cl">menu:
+</span></span><span class="line"><span class="cl">    main: []                           # 主导航菜单
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    social:                            # 社交链接菜单
+</span></span><span class="line"><span class="cl">        - identifier: github
+</span></span><span class="line"><span class="cl">          name: GitHub
+</span></span><span class="line"><span class="cl">          url: https://github.com/CaiJimmy/hugo-theme-stack
+</span></span><span class="line"><span class="cl">          params:
+</span></span><span class="line"><span class="cl">              icon: brand-github       # 图标名称
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">#相关文章设置
+</span></span><span class="line"><span class="cl">related:
+</span></span><span class="line"><span class="cl">    includeNewer: true                 # 是否包含较新文章
+</span></span><span class="line"><span class="cl">    threshold: 60                      # 相关度阈值
+</span></span><span class="line"><span class="cl">    toLower: false                     # 是否忽略大小写
+</span></span><span class="line"><span class="cl">    indices:
+</span></span><span class="line"><span class="cl">        - name: tags                   # 使用标签作为关联依据
+</span></span><span class="line"><span class="cl">          weight: 100                  # 权重
+</span></span><span class="line"><span class="cl">        - name: categories             # 使用分类作为关联依据
+</span></span><span class="line"><span class="cl">          weight: 200
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">#Markdown渲染设置
+</span></span><span class="line"><span class="cl">markup:
+</span></span><span class="line"><span class="cl">    goldmark:
+</span></span><span class="line"><span class="cl">        extensions:
+</span></span><span class="line"><span class="cl">            passthrough:
+</span></span><span class="line"><span class="cl">                enable: true           # 启用原始HTML通过
+</span></span><span class="line"><span class="cl">                delimiters:
+</span></span><span class="line"><span class="cl">                    block:             # 块级分隔符
+</span></span><span class="line"><span class="cl">                        - - \[
+</span></span><span class="line"><span class="cl">                          - \]
+</span></span><span class="line"><span class="cl">                        - - $$
+</span></span><span class="line"><span class="cl">                          - $$
+</span></span><span class="line"><span class="cl">                    inline:            # 行内分隔符
+</span></span><span class="line"><span class="cl">                        - - \(
+</span></span><span class="line"><span class="cl">                          - \)
+</span></span><span class="line"><span class="cl">        renderer:
+</span></span><span class="line"><span class="cl">            unsafe: true               # 允许不安全HTML（直接渲染HTML内容）
+</span></span><span class="line"><span class="cl">    tableOfContents:
+</span></span><span class="line"><span class="cl">        endLevel: 4                    # 目录结束级别
+</span></span><span class="line"><span class="cl">        ordered: true                  # 是否有序
+</span></span><span class="line"><span class="cl">        startLevel: 2                  # 目录开始级别
+</span></span><span class="line"><span class="cl">    highlight:
+</span></span><span class="line"><span class="cl">        noClasses: false               # 是否使用内联样式
+</span></span><span class="line"><span class="cl">        codeFences: true               # 启用代码围栏
+</span></span><span class="line"><span class="cl">        guessSyntax: true              # 自动猜测语法
+</span></span><span class="line"><span class="cl">        lineNoStart: 1                 # 行号起始值
+</span></span><span class="line"><span class="cl">        lineNos: true                  # 显示行号
+</span></span><span class="line"><span class="cl">        lineNumbersInTable: true       # 在表格中显示行号
+</span></span><span class="line"><span class="cl">        tabWidth: 4                    # 制表符宽度</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
 <p>重点： 务必修改 baseURL、title、avatar.src 和 social 部分的内容为你自己的信息</p>
 <p>本地预览</p>
 <p>在发布到互联网前，先在本地预览效果。</p>
@@ -560,52 +777,113 @@ tabWidth: 4                    # 制表符宽度</p>
 <p>·点击左侧Pages</p>
 <p>·将Buile and depolyment由Deploy from branch 改为 GitHub Actions</p>
 <p>·在本地站点根目录下，创建目录结构：.github/workflows/，并在 workflows 目录中新建文件 deploy.yml。</p>
-<p>·用文本编辑器打开 deploy.yml，粘贴以下工作流配置（该配置使用官方推荐 Actions，支持自动构建、发布）：</p>
-<p>name: Deploy Hugo Site to Pages</p>
-<p>on:
-push:
-branches: [&ldquo;main&rdquo;]   # 代码推送至 main 分支时触发
-workflow_dispatch:     # 支持手动触发</p>
-<p>permissions:
-contents: read
-pages: write
-id-token: write</p>
-<p>concurrency:
-group: &ldquo;pages&rdquo;
-cancel-in-progress: false</p>
-<p>jobs:
-build:
-runs-on: ubuntu-latest
-steps:
-- name: Checkout code
-uses: actions/checkout@v4
-with:
-submodules: recursive  # 自动拉取主题子模块
-fetch-depth: 0</p>
-<pre><code>  - name: Setup Hugo
-    uses: peaceiris/actions-hugo@v2
-    with:
-      hugo-version: 'latest'
-      # extended: true       # 若主题需扩展版，取消注释
-
-  - name: Build with Hugo
-    run: hugo --minify --gc   # 生成优化后的静态文件
-
-  - name: Upload artifact
-    uses: actions/upload-pages-artifact@v3
-    with:
-      path: ./public          # 上传生成的站点文件
-</code></pre>
-<p>deploy:
-environment:
-name: github-pages
-url: ${{ steps.deployment.outputs.page_url }}
-runs-on: ubuntu-latest
-needs: build
-steps:
-- name: Deploy to GitHub Pages
-id: deployment
-uses: actions/deploy-pages@v4</p>
+<p>·用文本编辑器打开 deploy.yml，粘贴以下工作流配置（该配置使用官方推荐 Actions，支持自动构建、发布）：
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">name: Deploy Hugo Site to Pages
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">on:
+</span></span><span class="line"><span class="cl">  push:
+</span></span><span class="line"><span class="cl">    branches: [&#34;main&#34;]   # 代码推送至 main 分支时触发
+</span></span><span class="line"><span class="cl">  workflow_dispatch:     # 支持手动触发
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">permissions:
+</span></span><span class="line"><span class="cl">  contents: read
+</span></span><span class="line"><span class="cl">  pages: write
+</span></span><span class="line"><span class="cl">  id-token: write
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">concurrency:
+</span></span><span class="line"><span class="cl">  group: &#34;pages&#34;
+</span></span><span class="line"><span class="cl">  cancel-in-progress: false
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">jobs:
+</span></span><span class="line"><span class="cl">  build:
+</span></span><span class="line"><span class="cl">    runs-on: ubuntu-latest
+</span></span><span class="line"><span class="cl">    steps:
+</span></span><span class="line"><span class="cl">      - name: Checkout code
+</span></span><span class="line"><span class="cl">        uses: actions/checkout@v4
+</span></span><span class="line"><span class="cl">        with:
+</span></span><span class="line"><span class="cl">          submodules: recursive  # 自动拉取主题子模块
+</span></span><span class="line"><span class="cl">          fetch-depth: 0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      - name: Setup Hugo
+</span></span><span class="line"><span class="cl">        uses: peaceiris/actions-hugo@v2
+</span></span><span class="line"><span class="cl">        with:
+</span></span><span class="line"><span class="cl">          hugo-version: &#39;latest&#39;
+</span></span><span class="line"><span class="cl">          # extended: true       # 若主题需扩展版，取消注释
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      - name: Build with Hugo
+</span></span><span class="line"><span class="cl">        run: hugo --minify --gc   # 生成优化后的静态文件
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      - name: Upload artifact
+</span></span><span class="line"><span class="cl">        uses: actions/upload-pages-artifact@v3
+</span></span><span class="line"><span class="cl">        with:
+</span></span><span class="line"><span class="cl">          path: ./public          # 上传生成的站点文件
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  deploy:
+</span></span><span class="line"><span class="cl">    environment:
+</span></span><span class="line"><span class="cl">      name: github-pages
+</span></span><span class="line"><span class="cl">      url: ${{ steps.deployment.outputs.page_url }}
+</span></span><span class="line"><span class="cl">    runs-on: ubuntu-latest
+</span></span><span class="line"><span class="cl">    needs: build
+</span></span><span class="line"><span class="cl">    steps:
+</span></span><span class="line"><span class="cl">      - name: Deploy to GitHub Pages
+</span></span><span class="line"><span class="cl">        id: deployment
+</span></span><span class="line"><span class="cl">        uses: actions/deploy-pages@v4</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
 <p>查看部署状态和访问博客</p>
 <p>推送完成后，在浏览器中访问你的 GitHub 仓库：https://github.com/&lt;你的用户名&gt;/&lt;你的用户名&gt;.github.io。</p>
 <p>点击顶部 Actions 标签页，查看名为 “Deploy Hugo Site to Pages” 的工作流运行状态。等待运行完成（出现绿色对勾 ✅）。</p>
@@ -613,11 +891,11 @@ uses: actions/deploy-pages@v4</p>
 <p>点击该链接即可访问已自动发布的博客。</p>
 <p>发布上线过程：</p>
 <p>进入my-blog根目录执行</p>
-<p>hugo &ndash;cleanDestinationDir     #清理旧文件并重新 生成</p>
-<p>hugo server  预览一下</p>
-<p>git add .</p>
-<p>git commit -m &ldquo;Publish: XXX&rdquo;</p>
-<p>git push</p>
+<p><code>hugo --cleanDestinationDir</code>     #清理旧文件并重新 生成</p>
+<p><code>hugo server</code>  预览一下</p>
+<p><code>git add .</code></p>
+<p><code>git commit -m &quot;Publish: XXX&quot;</code></p>
+<p><code>git push</code></p>
 
 </section>
 

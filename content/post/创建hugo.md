@@ -5,9 +5,9 @@ title = '搭建hugo博客'
 +++
 Hugo + GitHub搭建个人博客
 
-首先安装下载  Hugo和Git,并且注册一个GitHub账号，Hugo一定要选择Extended版本。
+首先安装下载  Hugo和Git,并且注册一个GitHub账号，Hugo一定要选择`Extended`版本。
 
-打开终端，按下win+R,输入cmd，回车进入终端，输入以下命令，验证一下安装是否成功了吗？
+打开终端，按下`win+R`,输入`cmd`，回车进入终端，输入以下命令，验证一下安装是否成功了吗？
 
 `git --version`
 
@@ -31,9 +31,9 @@ Hugo + GitHub搭建个人博客
 
 添加主题
 
-找到Hugo官网，选择主题，跳转到Github,点tag,下载最新版zip源码包
+找到Hugo官网，选择主题，跳转到Github,点`tag`,下载最新版zip源码包
 
-解压缩到themes文件夹，并将名字中的版本号去掉
+解压缩到`themes`文件夹，并将名字中的版本号去掉
 
 ![](https://telegraph-image-5tj.pages.dev/file/AgACAgUAAyEGAAS6dLpwAAMIaPOdoDP41HIYSdPL6PtG1KOY9UUAAi8LaxspIaFXF3C7MOihYicBAAMCAAN4AAM2BA.png)
 
@@ -42,21 +42,21 @@ Hugo + GitHub搭建个人博客
 在 `my-blog` 目录下，执行以下命令（仅针对本项目，功能是提取作者的演示案例作为初始项目，并清除作者的演示案例）
 
 强制删除当前目录的 content 文件夹（若存在）
-Remove-Item -Path "content" -Recurse -Force -ErrorAction SilentlyContinue
+`Remove-Item -Path "content" -Recurse -Force -ErrorAction SilentlyContinue`
 
 将主题示例的 content 复制到当前目录（xcopy在PowerShell中可直接使用）
-xcopy "themes\hugo-theme-stack\exampleSite\content" "content" /E /I /H /Y
+`xcopy "themes\hugo-theme-stack\exampleSite\content" "content" /E /I /H /Y`
 
 删除 exampleSite 文件夹
-Remove-Item -Path "themes\hugo-theme-stack\exampleSite" -Recurse -Force -ErrorAction SilentlyContinue
+`Remove-Item -Path "themes\hugo-theme-stack\exampleSite" -Recurse -Force -ErrorAction SilentlyContinue`
 
 删除 rich-content 文件夹
-Remove-Item -Path "content/post/rich-content" -Recurse -Force -ErrorAction SilentlyContinue
+`Remove-Item -Path "content/post/rich-content" -Recurse -Force -ErrorAction SilentlyContinue`
 
-删除hugo.toml，并创建hugo.yaml (进入相应文件夹删除创建即可)
+删除hugo.toml，并创建hugo.yaml (进入相应文件夹中删除创建即可)
 
-将下面模板代码完整复制到config.yaml文件中，根据注释修改你的信息
-
+将下面模板代码完整复制到`config.yaml`文件中，根据注释修改你的信息
+{{< highlight html >}}
 #站点基础配置
 baseurl: https://example.com/           # 网站根URL
 languageCode: en-us                     # 默认语言代码
@@ -261,7 +261,7 @@ markup:
         lineNos: true                  # 显示行号
         lineNumbersInTable: true       # 在表格中显示行号
         tabWidth: 4                    # 制表符宽度
-
+{{< /highlight >}}
 
 重点： 务必修改 baseURL、title、avatar.src 和 social 部分的内容为你自己的信息
 
@@ -323,7 +323,7 @@ git push -u origin main
 ·在本地站点根目录下，创建目录结构：.github/workflows/，并在 workflows 目录中新建文件 deploy.yml。
 
 ·用文本编辑器打开 deploy.yml，粘贴以下工作流配置（该配置使用官方推荐 Actions，支持自动构建、发布）：
-
+{{< highlight html >}}
 name: Deploy Hugo Site to Pages
 
 on:
@@ -374,6 +374,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+{{< /highlight >}}       
 
 查看部署状态和访问博客
 
@@ -390,12 +391,12 @@ jobs:
 
 进入my-blog根目录执行
 
-hugo --cleanDestinationDir     #清理旧文件并重新 生成
+`hugo --cleanDestinationDir`     #清理旧文件并重新 生成
 
-hugo server  预览一下
+`hugo server`  预览一下
 
-git add .
+`git add .`
 
-git commit -m "Publish: XXX"
+`git commit -m "Publish: XXX"`
 
-git push
+`git push`

@@ -1,25 +1,25 @@
 +++
-author = "Hugo Authors"
-title = "Markdown Syntax Guide"
-date = "2019-03-11"
-description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
+author = "Hugo Authors"       #指定文章作者为 “Hugo Authors”。
+title = "Markdown Syntax Guide"     #文章的标题是 “Markdown 语法指南”。
+date = "2019-03-11"       #文章的发布日期是 2019 年 3 月 11 日。
+description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."      #文章的描述，说明这是一篇展示基本 Markdown 语法和 HTML 元素格式化的示例文章
 tags = [
     "markdown",
     "css",
     "html",
     "themes",
-]
+]               #文章打标签，标签包括 markdown、css、html、themes，用于分类和检索。
 categories = [
     "themes",
     "syntax",
-]
-series = ["Themes Guide"]
-aliases = ["migrate-from-jekyl"]
-image = "pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg"
+]              #文章所属的分类，分类为 themes（主题）和 syntax（语法）。
+series = ["Themes Guide"]          #文章所属的系列，系列是 “Themes Guide”（主题指南）。
+aliases = ["migrate-from-jekyl"]   #文章的别名（旧链接），当访问/migrate-from-jekyl时，会重定向到当前文章（方便迁移，比如从 Jekyll 迁移到 Hugo 时保留旧链接）。
+image = "pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg"    #文章的封面图或关联图片，图片文件名是这个，通常会在站点的assets或static目录中（具体看 Hugo 配置）。
 +++
 
-This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
-<!--more-->
+This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.   #第一行是文章的引言，介绍本文展示 Hugo 内容文件中使用的基本 Markdown 语法，以及基本 HTML 元素在 Hugo 主题中是否有 CSS 装饰。
+<!--more-->             #Hugo 的摘要分割标记，在这之前的内容会作为文章摘要（比如在列表页显示），之后的内容是正文详情。
 
 ## Headings
 
@@ -38,7 +38,7 @@ Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptio
 
 Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
 
-## Blockquotes
+## Blockquotes             二级标题，说明这部分是 “块引用”
 
 The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
 

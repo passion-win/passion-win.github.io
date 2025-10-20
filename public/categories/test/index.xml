@@ -7,7 +7,37 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>win</copyright>
-        <lastBuildDate>Sun, 19 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://passion-win.github.io/categories/test/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 20 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://passion-win.github.io/categories/test/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>工具</title>
+        <link>https://passion-win.github.io/p/%E5%B7%A5%E5%85%B7/</link>
+        <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://passion-win.github.io/p/%E5%B7%A5%E5%85%B7/</guid>
+        <description>&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.myip.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;查看IP地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://ip-api.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;通过IP地址查找地址&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://scamalytics.com/&#34; target=&#34;_blank&#34; style=&#34;padding: 8px 16px; background: #007bff; color: white; border-radius: 4px; text-decoration: none;&#34;&gt;
+    检测IP的欺诈值
+&lt;/a&gt;
+&lt;p&gt;检测IP的欺诈值：https://scamalytics.com/&lt;/p&gt;
+&lt;p&gt;查看别人的IP是在哪个商家的VPS买的：https://ipinfo.io&lt;/p&gt;
+&lt;p&gt;优选IP、优选域名&lt;/p&gt;
+&lt;p&gt;cloudflare worker优选原理解析&lt;/p&gt;
+&lt;p&gt;通过cloudflare筛选质量好的IP，把域名解析到这些IP上&lt;/p&gt;
+&lt;p&gt;worker路由是cloudflare平台一种流量转发的规则，自定义域名或worker路由这两种方式通过worker连接到外部终结点来接收入站HTTP请求&lt;/p&gt;
+&lt;p&gt;海外虚拟身份证：https://www.fakepersongenerator.com/&lt;/p&gt;
+&lt;p&gt;US.KG域名申请：https://domain.digitalplat.org/&lt;/p&gt;
+&lt;p&gt;最快的密码破解器：https://hashcat.net/hashcat/&lt;/p&gt;
+&lt;p&gt;John破解辅助工具：https://www.openwall.com/john/&lt;/p&gt;
+&lt;p&gt;图床：&lt;a class=&#34;link&#34; href=&#34;https://telegraph-image-5tj.pages.dev/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Telegraph-Image|免费图床&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;tails系统：https://tails.net/&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://fusionauth.io/dev-tools/uuid-generator&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;uuid生成器&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Git &amp; GitHub 入门操作</title>
         <link>https://passion-win.github.io/p/git-github-%E5%85%A5%E9%97%A8%E6%93%8D%E4%BD%9C/</link>
         <pubDate>Sun, 19 Oct 2025 00:00:00 +0000</pubDate>
