@@ -22,6 +22,22 @@ links:
     website: https://domain.digitalplat.org/
 
 
+  - title: uuid
+    description: 生成器
+    website: https://1024tools.com/uuid
+
+  - title: 检测IP
+    description: 检测IP的欺诈值
+    website: https://scamalytics.com/
+
+  - title: VPS
+    description: 查看别人的IP是在哪个商家的VPS购买
+    website: https://ipinfo.io
+
+
+
+
+
 menu:
     main: 
         weight: -50

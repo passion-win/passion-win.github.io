@@ -256,9 +256,8 @@
   <ol>
     <li>
       <ol>
-        <li>
+        <li><a href="#find">find</a>
           <ol>
-            <li></li>
             <li><a href="#案例01找出etc目录下面以conf结尾的文件">案例01：找出/etc/目录下面以.conf结尾的文件</a></li>
             <li><a href="#案例02找出etc目录下以conf结尾的文件文件大小大于10k">案例02：找出/etc/目录下以.conf结尾的文件文件大小大于10k</a></li>
             <li><a href="#案例03找出varlog下面以log结尾的文件并且修改时间大于3天">案例03：找出/var/log下面以.log结尾的文件并且修改时间大于3天</a></li>
@@ -267,9 +266,9 @@
             <li><a href="#案例05find找出文件后进行删除">案例05：find找出文件后进行删除</a></li>
             <li><a href="#案例06找出etc下以conf结尾的文件与打包压缩backup">案例06：找出/etc/下以.conf结尾的文件与打包压缩/backup/</a></li>
             <li><a href="#特殊符号-重定向">特殊符号-重定向</a></li>
-            <li><a href="#grep">grep</a></li>
           </ol>
         </li>
+        <li><a href="#grep">grep</a></li>
       </ol>
     </li>
   </ol>
@@ -344,7 +343,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 3 分钟
+                    阅读时长: 5 分钟
                 </time>
             </div>
         
@@ -360,36 +359,40 @@
     
     
     <p>Linux四剑客</p>
-<p>1、find         查找文件、目录，find与其他命令配合</p>
-<p>2、gerp/egrep   过滤</p>
-<p>3、sed           过滤，替换，取行</p>
-<p>4、awk           过滤，取行，取列，统计与计算</p>
-<h5 id="find">find
-</h5><p>选项</p>
-<p>-type                    类型f 文件d 目录</p>
-<p>-iname                  文件名不区分大小写grep -i</p>
-<p>-name                    指定文件名，默认精确匹配。加上*模糊</p>
-<p>-size                       指定大小+10M -100k</p>
-<p>-mtime                   根据时间查找</p>
-<p>-maxdepth             查找最大深度</p>
+<p>1、find    ：           查找文件、目录，find与其他命令配合</p>
+<p>2、gerp/egrep  ： 过滤</p>
+<p>3、sed           ：过滤，替换，取行</p>
+<p>4、awk           ：过滤，取行，取列，统计与计算</p>
+<h3 id="find">find
+</h3><p>find 路径 -name &ldquo;文件名&rdquo;</p>
+<p>选项</p>
+<p><code>.</code>                        表示在当前目录下</p>
+<p><code>&quot;ab*&quot;</code>                    *匹配一串字符    ？匹配一个字符</p>
+<p><code>-type</code>                    d目录  f文件  l软链接</p>
+<p><code>-iname</code>                   忽略大小写查找含有关键字的文件</p>
+<p><code>-name</code>                    指定文件名，默认精确匹配。加上*模糊</p>
+<p><code>-size</code>                    指定大小 +1M表示大于1M的，-1k表示小于1k的文件</p>
+<p><code>-mtime</code>                   根据时间查找</p>
+<p><code>-maxdepth</code>                查找最大深度</p>
+<p><code>-perm 755</code>                表示权限为755的文件</p>
 <h4 id="案例01找出etc目录下面以conf结尾的文件">案例01：找出/etc/目录下面以.conf结尾的文件
-</h4><p>find /etc/ -type f -name &lsquo;*.conf&rsquo;</p>
+</h4><p><code>find /etc/ -type f -name '*.conf'</code></p>
 <p>find  目录  类型 名字</p>
-<p>find /etc/ -type f -name &lsquo;host*&rsquo;       #以hosts开头</p>
+<p><code>find /etc/ -type f -name 'host*'</code>       #以hosts开头</p>
 <p>找出/bin/  /sbin/  文件中包含ip的文件</p>
-<p>find /bin/ /sbin/ -type f -name &ldquo;*ip&rdquo;</p>
+<p><code>find /bin/ /sbin/ -type f -name &quot;*ip&quot;</code></p>
 <h4 id="案例02找出etc目录下以conf结尾的文件文件大小大于10k">案例02：找出/etc/目录下以.conf结尾的文件文件大小大于10k
-</h4><p>find /etc/ -type f -name &ldquo;*.conf&rdquo; -size +10k</p>
+</h4><p><code>find /etc/ -type f -name &quot;*.conf&quot; -size +10k</code></p>
 <h4 id="案例03找出varlog下面以log结尾的文件并且修改时间大于3天">案例03：找出/var/log下面以.log结尾的文件并且修改时间大于3天
-</h4><p>find /var/log/ -type f -name &ldquo;*.log&rdquo; -mtime +3</p>
+</h4><p><code>find /var/log/ -type f -name &quot;*.log&quot; -mtime +3</code></p>
 <h4 id="案例04查找文件或目录的时候不区分大小写">案例04：查找文件或目录的时候不区分大小写
-</h4><p>find /etc/ -type f -iname &ldquo;*.conf&rdquo;</p>
+</h4><p><code>find /etc/ -type f -iname &quot;*.conf&quot;</code></p>
 <h4 id="案例根据深度查找文件">案例根据深度查找文件
-</h4><p>find /etc/ -maxdepth 1 -type f -name &ldquo;*.conf&rdquo;</p>
+</h4><p><code>find /etc/ -maxdepth 1 -type f -name &quot;*.conf&quot;</code></p>
 <h4 id="案例05find找出文件后进行删除">案例05：find找出文件后进行删除
 </h4><p>创建测试环境</p>
-<p>mkdir  -p /app/logs/</p>
-<p>touch /app/logs/access{01..10}.log</p>
+<p><code>mkdir  -p /app/logs/</code></p>
+<p><code>touch /app/logs/access{01..10}.log</code></p>
 <p>方法01：find与反引导</p>
 <p>rm -f <code>find /app/logs/ -type f -name '*.log'</code></p>
 <p>方法02：find 管道</p>
@@ -425,49 +428,130 @@
 <p>#echo &lsquo;oldboy $LANG hostname{01..10}&rsquo;| oldboy $LANG hostname {01..10}</p>
 <p>#echo &ldquo;oldboy $LANG hostname {01..10}&rdquo;</p>
 <h5 id="重定向符号">重定向符号
-</h5><blockquote>
-<p>或1&gt;           标准输出重定向（正确信息），先清空，然后写入</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>或1&raquo;     标准输出追加重定向（正确信息），追加到文件末尾</p>
-</blockquote>
-</blockquote>
-<p>2&gt;                标准错误输出重定向（错误信息），先清空，然后写入</p>
-<p>2&raquo;              标准错误追加输出重定向（错误信息），追加到文件末尾</p>
-<blockquote>
-<blockquote>
-<p>oldboy.txt 2&gt;&amp;1 &amp;&raquo;oldboy.txt               标准错误信息都写入到指定文件</p>
-</blockquote>
-</blockquote>
-<p>&lt;或0&lt;            输入重定向</p>
-<p>&laquo;或0&laquo;           追加输入重定向</p>
+</h5><p><code>&gt; 或1&gt;</code>           标准输出重定向（正确信息），先清空，然后写入</p>
+<p><code>&gt; &gt; 或1&gt;&gt;</code>     标准输出追加重定向（正确信息），追加到文件末尾</p>
+<p><code>2&gt;</code>                标准错误输出重定向（错误信息），先清空，然后写入</p>
+<p><code>2&gt;&gt;</code>              标准错误追加输出重定向（错误信息），追加到文件末尾</p>
+<p><code>&gt; &gt; oldboy.txt 2&gt;&amp;1 &amp;&gt;&gt;oldboy.txt               标准错误信息都写入到指定文件</code></p>
+<p><code>&lt;或0&lt;</code>            输入重定向</p>
+<p><code>&lt;&lt;或0&lt;&lt;</code>           追加输入重定向</p>
 <p>2&gt;&amp;1:将正确和错误的信息都输出，适用于日志文件</p>
 <p>2&gt;:只输出错误的信息</p>
-<h4 id="grep">grep
-</h4><p>-i       不区分大小写ignore case</p>
-<p>-n       行号number</p>
-<p>-v        取反，排除</p>
-<p>&ndash;color       给过滤出的内容加上颜色</p>
-<h5 id="案例04-过滤etcpasswd中包含root的行">案例04-过滤/etc/passwd中包含root的行
-</h5><p>grep &lsquo;root&rsquo; /etc/passwd</p>
-<h5 id="案例05-过滤出varlogsecure文件中包含failed的行不区分大小写">案例05-过滤出/var/log/secure文件中包含failed的行（不区分大小写）
-</h5><p>制造错误</p>
-<p>cat &gt;secure&laquo;EOF</p>
-<p>Failed password</p>
-<p>failed password</p>
-<p>Failed password</p>
-<p>failED password</p>
-<p>EOF</p>
-<p>过滤</p>
-<p>grep -i &lsquo;failed password&rsquo; secure</p>
-<p>过滤出并显示行号</p>
-<p>grep -in &lsquo;failed password&rsquo; secure</p>
-<p>在/etc/ssh/sshd_config中过滤包含port的行并显示行号</p>
-<p>grep -in &lsquo;port&rsquo; /etc/ssh/sshd_config</p>
-<p>在/etc/ssh/ssh_config中过滤包含permitrootlogin的行并显示行号</p>
-<p>grep -in &lsquo;permitrootlogin&rsquo; /etc/ssh/sshd_config</p>
-<p>PermitRootLogin yes #准许root远程登录</p>
+<h3 id="grep">grep
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">grep -n --color &#39;^hello&#39; ~/Desktop/2.txt</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>-n              ==&gt; 显示行数</p>
+<p>-color          ==&gt; 显示颜色</p>
+<p>&lsquo;^hello&rsquo;  ^     ==&gt;字符串开头,查找的字符串
+$               ==&gt; 字符串结尾</p>
+<p>~/Desktop/2.txt ==&gt; 查找的文件路径</p>
+<p><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">grep -v --color &#39;^hello&#39; ~/Desktop/2.txt | grep -v &#34;^$&#34;</span></span></code></pre></td></tr></table>
+</div>
+</div>
+-v        ==&gt; 取反，不要以 hello 开头的内容</p>
+<p>-v ”^$”   ==&gt; 去掉空行</p>
+<p><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">egrep &#39;[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$&#39; 2.txt 
+</span></span><span class="line"><span class="cl">egrep &#39;([0-9]{1,3}\.){3}[0-9]{1,3}$&#39; 2.txt</span></span></code></pre></td></tr></table>
+</div>
+</div>
+&lsquo;[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}$&rsquo;  ==&gt; 正则表达式匹配ip地址 xxx.xxx.xxx.xxx</p>
+<p>cat /etc/passwd</p>
+<p>grep 命令用于查找文件中的内容,匹配文件中的内容</p>
+<p>grep  -n &ndash;color &ldquo;root&rdquo; /etc/passwd</p>
+<p>-n    ==&gt;查找的结果在passwd文件的 行号</p>
+<p>&ndash;color  ==&gt;为关键字加上颜色</p>
+<p>/etc/passwd  这个文件</p>
+<p>grep  -n &ndash;color &ldquo;^root&rdquo; /etc/passwd</p>
+<p>^root 表示以root开头的行，文本后面出现root关键字没有用</p>
+<p><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">grep  -n --color &#34;root$&#34; /etc/passwd
+</span></span><span class="line"><span class="cl">grep  -n --color &#34;bash$&#34; /etc/passwd</span></span></code></pre></td></tr></table>
+</div>
+</div>
+root$ 表示文本所在行以root结尾</p>
+<p>bash$ 表示文本所在行以bash结尾</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">grep &#34;#&#34; /etc/passwd  #查找passwd文件中包含#的行
+</span></span><span class="line"><span class="cl">grep -v &#34;#&#34; /etc/passwd  #查找passwd文件中不包含#的行</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>grep -v &ldquo;#&rdquo; /etc/passwd | grep -v &ldquo;^$&rdquo;   #查找passwd文件中不包含#的行,并去除空行</p>
+<p>grep -v &ldquo;^$&rdquo;   表示不包含空行，即去除空行</p>
+<p>-v  表示不包含</p>
+<p>&ldquo;^$&rdquo; 表示空行</p>
+<p>^ 以空格开头</p>
+<p>$ 以空格结尾</p>
+<p>grep -[a c i n v] &lsquo;搜索的内容&rsquo;  filename</p>
+<p>-a 以文本文件方式搜索</p>
+<p>-c 计算找到的符合行的次数</p>
+<p>-i 忽略大小写</p>
+<p>-n 顺便输出行号</p>
+<p>-v 反向选择，即显示不包含匹配文本的所有行</p>
+<p>-h 查询多文件时不显示文件名</p>
+<p>-l查询多文件时只输出包含匹配字符的文件名</p>
+<p>-s 不显示不存在或无匹配的错误信息</p>
+<p>grep 命令加 -E 参数，这一扩展允许使用扩展模式匹配</p>
+<p>grep -E  =  egrep</p>
+<p>使用grep查找文件中的ip地址</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">grep --color &#34;[0-9][0-9]&#34;  test.txt   
+</span></span><span class="line"><span class="cl">&#34;[0-9]&#34;  表示0~9任意一个字符
+</span></span><span class="line"><span class="cl">&#34;[0-9][0-9]&#34; 两个连续数字
+</span></span><span class="line"><span class="cl">grep --color &#34;[0-9]\{1,3}&#34;  test.txt  #匹配1~3次</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>egrep &ndash;color &ldquo;[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}$&rdquo;  test.txt</p>
+<p>[0-9]{1,3}. 表示以1~3位数字，并且后面有一个 . 号</p>
+<p>.   表示转义的.  一定要加上</p>
+<p>[0-9]{1,3}$   表示以1~3位数字结尾，如果是4位数字或以上就不行</p>
+<p>[a-z] 表示一个字母</p>
+<p>egrep &ndash;color &ldquo;([0-9]{1,3}.){3}[0-9]{1,3}$&rdquo;  test.txt
+{} 表示匹配的的次数
+([0-9]{1,3}.){3} 将前面的形式匹配3次</p>
+<p>[^] 匹配一个不在指定范围内的字符 ex: &lsquo;[^A-FH-Z]rep&rsquo; 匹配不包含A-R和T-Z的一个字母开头，紧跟rep的行。</p>
+<p>ls -l |grep &lsquo;^a&rsquo;通过管道过滤ls -l 输出的内容，只显示以a开头的行
+grep &rsquo;test&rsquo; aa bb cc 显示在aa，bb，cc文件中匹配test行
+grep &lsquo;[a-z]/{5/}&rsquo;  aa显示所有包含每个字符串至少有5个连续小写字符的字符串的行</p>
+<p>grep -c &ldquo;48&rdquo; test.txt 统计所有以&quot;48&quot;字符开头的行有多少
+grep -i &ldquo;May&rdquo; test.txt 不区分大小写查找 &ldquo;May&quot;所有的行</p>
+<p>grep -n &ldquo;May&rdquo; test.txt 显示行号
+grep -v &ldquo;48&rdquo; test.txt 显示输出没有字符&quot;48&rdquo; 所有的行
+([a-z]+[a-z0-9])      表示匹配任意一个字母 + 任意一个数字或字母
+([a-z]+[a-z0-9]+)    这边的+号表示可以匹配多个</p>
 
 </section>
 
@@ -501,6 +585,19 @@
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/n8n/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">n8n</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="">
@@ -571,30 +668,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Chinese Test</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/placeholder-text/">
-        
-        
-            <div class="article-image">
-                <img src="/p/placeholder-text/matt-le-SJSpo9hQf7s-unsplash.8eae06664ddfb3e8dc6e000756cb703b_hu_cc847465c05fc251.jpg" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Placeholder Text"
-                        
-                        data-hash="md5-jq4GZk3fs&#43;jcbgAHVstwOw==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Placeholder Text</h2>
         </div>
     </a>
 </article>
