@@ -38,6 +38,9 @@
                 href="https://passion-win.github.io/categories/"
                 />
   </url><url>
+    <loc>https://passion-win.github.io/p/linux%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2025-10-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://passion-win.github.io/post/</loc>
     <lastmod>2025-10-20T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -55,6 +58,9 @@
     <lastmod>2025-10-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://passion-win.github.io/p/%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2025-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://passion-win.github.io/categories/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2025-10-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://passion-win.github.io/categories/%E7%BD%91%E7%AB%99/</loc>
@@ -151,10 +157,10 @@
     <loc>https://passion-win.github.io/p/math-typesetting/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://passion-win.github.io/links/</loc>
-  </url><url>
     <loc>https://passion-win.github.io/search/</loc>
   </url><url>
-    <loc>https://passion-win.github.io/%E5%85%B3%E4%BA%8E/</loc>
+    <loc>https://passion-win.github.io/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D/</loc>
+  </url><url>
+    <loc>https://passion-win.github.io/%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/</loc>
   </url>
 </urlset>
