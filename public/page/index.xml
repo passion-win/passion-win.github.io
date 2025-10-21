@@ -45,20 +45,12 @@
 </description>
         </item>
         <item>
-        <title>链接汇总</title>
-        <link>https://passion-win.github.io/%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/</link>
+        <title>链接</title>
+        <link>https://passion-win.github.io/%E9%93%BE%E6%8E%A5/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://passion-win.github.io/%E9%93%BE%E6%8E%A5%E6%B1%87%E6%80%BB/</guid>
-        <description>&lt;p&gt;这里可以添加关于这些链接的说明文字，例如介绍这些链接的分类、用途等。&lt;/p&gt;
-&lt;p&gt;你可以根据需要添加更多链接，每个链接包含以下字段：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;title&lt;/code&gt;：链接的标题（必填）&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;description&lt;/code&gt;：对链接的简要描述（可选）&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;website&lt;/code&gt;：链接的网址（必填）&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;image&lt;/code&gt;：展示的图片，支持外部图片URL或本地图片路径（可选）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;如果需要调整导航栏中的位置，可以修改&lt;code&gt;menu.main.weight&lt;/code&gt;的值，数值越小越靠左侧。&lt;/p&gt;
+        <guid>https://passion-win.github.io/%E9%93%BE%E6%8E%A5/</guid>
+        <description>&lt;p&gt;好用网站分享&lt;/p&gt;
 </description>
         </item>
         

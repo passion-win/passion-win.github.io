@@ -66,33 +66,120 @@ CentOS/RHEL：sudo yum install openssh-server&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>工具</title>
-        <link>https://passion-win.github.io/p/%E5%B7%A5%E5%85%B7/</link>
+        <title>Linux四剑客</title>
+        <link>https://passion-win.github.io/p/linux%E5%9B%9B%E5%89%91%E5%AE%A2/</link>
         <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://passion-win.github.io/p/%E5%B7%A5%E5%85%B7/</guid>
-        <description>&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.myip.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;查看IP地址&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://ip-api.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;通过IP地址查找地址&lt;/a&gt;&lt;/p&gt;
-&lt;a href=&#34;https://scamalytics.com/&#34; target=&#34;_blank&#34; style=&#34;padding: 8px 16px; background: #007bff; color: white; border-radius: 4px; text-decoration: none;&#34;&gt;
-    检测IP的欺诈值
-&lt;/a&gt;
-&lt;p&gt;检测IP的欺诈值：https://scamalytics.com/&lt;/p&gt;
-&lt;p&gt;查看别人的IP是在哪个商家的VPS买的：https://ipinfo.io&lt;/p&gt;
-&lt;p&gt;优选IP、优选域名&lt;/p&gt;
-&lt;p&gt;cloudflare worker优选原理解析&lt;/p&gt;
-&lt;p&gt;通过cloudflare筛选质量好的IP，把域名解析到这些IP上&lt;/p&gt;
-&lt;p&gt;worker路由是cloudflare平台一种流量转发的规则，自定义域名或worker路由这两种方式通过worker连接到外部终结点来接收入站HTTP请求&lt;/p&gt;
-&lt;p&gt;海外虚拟身份证：https://www.fakepersongenerator.com/&lt;/p&gt;
-&lt;p&gt;US.KG域名申请：https://domain.digitalplat.org/&lt;/p&gt;
-&lt;p&gt;最快的密码破解器：https://hashcat.net/hashcat/&lt;/p&gt;
-&lt;p&gt;John破解辅助工具：https://www.openwall.com/john/&lt;/p&gt;
-&lt;p&gt;图床：&lt;a class=&#34;link&#34; href=&#34;https://telegraph-image-5tj.pages.dev/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Telegraph-Image|免费图床&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;tails系统：https://tails.net/&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://fusionauth.io/dev-tools/uuid-generator&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;uuid生成器&lt;/a&gt;&lt;/p&gt;
+        <guid>https://passion-win.github.io/p/linux%E5%9B%9B%E5%89%91%E5%AE%A2/</guid>
+        <description>&lt;p&gt;Linux四剑客&lt;/p&gt;
+&lt;p&gt;1、find         查找文件、目录，find与其他命令配合&lt;/p&gt;
+&lt;p&gt;2、gerp/egrep   过滤&lt;/p&gt;
+&lt;p&gt;3、sed           过滤，替换，取行&lt;/p&gt;
+&lt;p&gt;4、awk           过滤，取行，取列，统计与计算&lt;/p&gt;
+&lt;h5 id=&#34;find&#34;&gt;find
+&lt;/h5&gt;&lt;p&gt;选项&lt;/p&gt;
+&lt;p&gt;-type                    类型f 文件d 目录&lt;/p&gt;
+&lt;p&gt;-iname                  文件名不区分大小写grep -i&lt;/p&gt;
+&lt;p&gt;-name                    指定文件名，默认精确匹配。加上*模糊&lt;/p&gt;
+&lt;p&gt;-size                       指定大小+10M -100k&lt;/p&gt;
+&lt;p&gt;-mtime                   根据时间查找&lt;/p&gt;
+&lt;p&gt;-maxdepth             查找最大深度&lt;/p&gt;
+&lt;h4 id=&#34;案例01找出etc目录下面以conf结尾的文件&#34;&gt;案例01：找出/etc/目录下面以.conf结尾的文件
+&lt;/h4&gt;&lt;p&gt;find /etc/ -type f -name &amp;lsquo;*.conf&amp;rsquo;&lt;/p&gt;
+&lt;p&gt;find  目录  类型 名字&lt;/p&gt;
+&lt;p&gt;find /etc/ -type f -name &amp;lsquo;host*&amp;rsquo;       #以hosts开头&lt;/p&gt;
+&lt;p&gt;找出/bin/  /sbin/  文件中包含ip的文件&lt;/p&gt;
+&lt;p&gt;find /bin/ /sbin/ -type f -name &amp;ldquo;*ip&amp;rdquo;&lt;/p&gt;
+&lt;h4 id=&#34;案例02找出etc目录下以conf结尾的文件文件大小大于10k&#34;&gt;案例02：找出/etc/目录下以.conf结尾的文件文件大小大于10k
+&lt;/h4&gt;&lt;p&gt;find /etc/ -type f -name &amp;ldquo;*.conf&amp;rdquo; -size +10k&lt;/p&gt;
+&lt;h4 id=&#34;案例03找出varlog下面以log结尾的文件并且修改时间大于3天&#34;&gt;案例03：找出/var/log下面以.log结尾的文件并且修改时间大于3天
+&lt;/h4&gt;&lt;p&gt;find /var/log/ -type f -name &amp;ldquo;*.log&amp;rdquo; -mtime +3&lt;/p&gt;
+&lt;h4 id=&#34;案例04查找文件或目录的时候不区分大小写&#34;&gt;案例04：查找文件或目录的时候不区分大小写
+&lt;/h4&gt;&lt;p&gt;find /etc/ -type f -iname &amp;ldquo;*.conf&amp;rdquo;&lt;/p&gt;
+&lt;h4 id=&#34;案例根据深度查找文件&#34;&gt;案例根据深度查找文件
+&lt;/h4&gt;&lt;p&gt;find /etc/ -maxdepth 1 -type f -name &amp;ldquo;*.conf&amp;rdquo;&lt;/p&gt;
+&lt;h4 id=&#34;案例05find找出文件后进行删除&#34;&gt;案例05：find找出文件后进行删除
+&lt;/h4&gt;&lt;p&gt;创建测试环境&lt;/p&gt;
+&lt;p&gt;mkdir  -p /app/logs/&lt;/p&gt;
+&lt;p&gt;touch /app/logs/access{01..10}.log&lt;/p&gt;
+&lt;p&gt;方法01：find与反引导&lt;/p&gt;
+&lt;p&gt;rm -f &lt;code&gt;find /app/logs/ -type f -name &#39;*.log&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;方法02：find 管道&lt;/p&gt;
+&lt;p&gt;find /app/logs/ -type f -name &amp;ldquo;*.log&amp;rdquo; | xargs rm -f&lt;/p&gt;
+&lt;p&gt;| 与|xargs区别&lt;/p&gt;
+&lt;p&gt;|传递的是字符串，文字符号&lt;/p&gt;
+&lt;p&gt;|xargs传递是参数 命令后面文件，目录&lt;/p&gt;
+&lt;p&gt;方法03：find选项-exec&lt;/p&gt;
+&lt;p&gt;find -type f -name &amp;ldquo;*.log&amp;rdquo; -exec rm -f {} ;&lt;/p&gt;
+&lt;p&gt;-exec 命令 {} ;&lt;/p&gt;
+&lt;p&gt;{}前面find找出的文件内容&lt;/p&gt;
+&lt;p&gt;;结尾标记&lt;/p&gt;
+&lt;h4 id=&#34;案例06找出etc下以conf结尾的文件与打包压缩backup&#34;&gt;案例06：找出/etc/下以.conf结尾的文件与打包压缩/backup/
+&lt;/h4&gt;&lt;p&gt;方法01：find+反引号&lt;/p&gt;
+&lt;p&gt;tar zcf /backup/etc-conf.tar.gz  &lt;code&gt;find /etc/ -type f -name &amp;quot;*.conf&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;方法02：find |xargs&lt;/p&gt;
+&lt;p&gt;find /etc/ -type f -name &amp;ldquo;*.conf&amp;rdquo; |xargs tar zcf /backup/etc_conf.tar.gz&lt;/p&gt;
+&lt;p&gt;方法03：find -execf&lt;/p&gt;
+&lt;p&gt;find /etc/ -type f -name &amp;ldquo;*.conf&amp;rdquo; -exec tar -zcf /backup/etc_conf.tar.gz {} ;&lt;/p&gt;
+&lt;p&gt;有坑，发现打包压缩后只有1个文件&lt;/p&gt;
+&lt;p&gt;find 与 -exe执行流程&lt;/p&gt;
+&lt;p&gt;find找出1个文件exec执行1次命令&lt;/p&gt;
+&lt;p&gt;find /etc/ -type f -name &amp;ldquo;*.conf&amp;rdquo; -exec tar zcf /backup/etc-exec.tar.gz {} +&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;先执行前面命令执行完成，结果一次性通exec传递给后面命令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;特殊符号-重定向&#34;&gt;特殊符号-重定向
+&lt;/h4&gt;&lt;h5 id=&#34;单引号双引号反引号不加引号的区别&#34;&gt;单引号、双引号、反引号、不加引号的区别
+&lt;/h5&gt;&lt;p&gt;单引号：所见即所得，单引号里面的内容会原封不动输出，shell(bash)不会解析与运行&lt;/p&gt;
+&lt;p&gt;双引号：与单引号类似，特殊符号会被解析运行$,``,不会解析{}(通配符匹配文件名)&lt;/p&gt;
+&lt;p&gt;不加引号：与双引号类似，解析{}&lt;/p&gt;
+&lt;p&gt;反引号：优先执行，先运行引号里面的命令&lt;/p&gt;
+&lt;p&gt;#echo &amp;lsquo;oldboy $LANG hostname{01..10}&amp;rsquo;| oldboy $LANG hostname {01..10}&lt;/p&gt;
+&lt;p&gt;#echo &amp;ldquo;oldboy $LANG hostname {01..10}&amp;rdquo;&lt;/p&gt;
+&lt;h5 id=&#34;重定向符号&#34;&gt;重定向符号
+&lt;/h5&gt;&lt;blockquote&gt;
+&lt;p&gt;或1&amp;gt;           标准输出重定向（正确信息），先清空，然后写入&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;或1&amp;raquo;     标准输出追加重定向（正确信息），追加到文件末尾&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2&amp;gt;                标准错误输出重定向（错误信息），先清空，然后写入&lt;/p&gt;
+&lt;p&gt;2&amp;raquo;              标准错误追加输出重定向（错误信息），追加到文件末尾&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;oldboy.txt 2&amp;gt;&amp;amp;1 &amp;amp;&amp;raquo;oldboy.txt               标准错误信息都写入到指定文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&amp;lt;或0&amp;lt;            输入重定向&lt;/p&gt;
+&lt;p&gt;&amp;laquo;或0&amp;laquo;           追加输入重定向&lt;/p&gt;
+&lt;p&gt;2&amp;gt;&amp;amp;1:将正确和错误的信息都输出，适用于日志文件&lt;/p&gt;
+&lt;p&gt;2&amp;gt;:只输出错误的信息&lt;/p&gt;
+&lt;h4 id=&#34;grep&#34;&gt;grep
+&lt;/h4&gt;&lt;p&gt;-i       不区分大小写ignore case&lt;/p&gt;
+&lt;p&gt;-n       行号number&lt;/p&gt;
+&lt;p&gt;-v        取反，排除&lt;/p&gt;
+&lt;p&gt;&amp;ndash;color       给过滤出的内容加上颜色&lt;/p&gt;
+&lt;h5 id=&#34;案例04-过滤etcpasswd中包含root的行&#34;&gt;案例04-过滤/etc/passwd中包含root的行
+&lt;/h5&gt;&lt;p&gt;grep &amp;lsquo;root&amp;rsquo; /etc/passwd&lt;/p&gt;
+&lt;h5 id=&#34;案例05-过滤出varlogsecure文件中包含failed的行不区分大小写&#34;&gt;案例05-过滤出/var/log/secure文件中包含failed的行（不区分大小写）
+&lt;/h5&gt;&lt;p&gt;制造错误&lt;/p&gt;
+&lt;p&gt;cat &amp;gt;secure&amp;laquo;EOF&lt;/p&gt;
+&lt;p&gt;Failed password&lt;/p&gt;
+&lt;p&gt;failed password&lt;/p&gt;
+&lt;p&gt;Failed password&lt;/p&gt;
+&lt;p&gt;failED password&lt;/p&gt;
+&lt;p&gt;EOF&lt;/p&gt;
+&lt;p&gt;过滤&lt;/p&gt;
+&lt;p&gt;grep -i &amp;lsquo;failed password&amp;rsquo; secure&lt;/p&gt;
+&lt;p&gt;过滤出并显示行号&lt;/p&gt;
+&lt;p&gt;grep -in &amp;lsquo;failed password&amp;rsquo; secure&lt;/p&gt;
+&lt;p&gt;在/etc/ssh/sshd_config中过滤包含port的行并显示行号&lt;/p&gt;
+&lt;p&gt;grep -in &amp;lsquo;port&amp;rsquo; /etc/ssh/sshd_config&lt;/p&gt;
+&lt;p&gt;在/etc/ssh/ssh_config中过滤包含permitrootlogin的行并显示行号&lt;/p&gt;
+&lt;p&gt;grep -in &amp;lsquo;permitrootlogin&amp;rsquo; /etc/ssh/sshd_config&lt;/p&gt;
+&lt;p&gt;PermitRootLogin yes #准许root远程登录&lt;/p&gt;
 </description>
         </item>
         <item>
