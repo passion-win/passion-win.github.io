@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>科普 on win</title>
+        <link>https://passion-win.github.io/categories/%E7%A7%91%E6%99%AE/</link>
+        <description>Recent content in 科普 on win</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>win</copyright>
+        <lastBuildDate>Mon, 20 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://passion-win.github.io/categories/%E7%A7%91%E6%99%AE/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>IPV6</title>
+        <link>https://passion-win.github.io/p/ipv6/</link>
+        <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://passion-win.github.io/p/ipv6/</guid>
+        <description>&lt;p&gt;查看公网IPv6的网址：(&lt;a class=&#34;link&#34; href=&#34;https://ipw.cn/ipv6/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://ipw.cn/ipv6/&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;IPV6不需要经过NAT，IPv4需要经过NAT&lt;/p&gt;
+&lt;p&gt;IPV6就是第六代IP协议，IPV6的诞生主要为了解决IPv4地址枯竭的问题&lt;/p&gt;
+&lt;p&gt;IPv6使用冒号分割了8组，每组有4个十六进制数字，8×4=32（十六进制数字），每个进制等于4比特,总长度是128比特bit&lt;/p&gt;
+&lt;p&gt;OpenWrt&lt;/p&gt;
+&lt;p&gt;IPv6中2开头的是公网IP，IPv4中6.6.6.6是公网IP&lt;/p&gt;
+&lt;p&gt;私有地址&lt;/p&gt;
+&lt;p&gt;::1类似对应的127.0.0.1的回环地址&lt;/p&gt;
+&lt;p&gt;::类似对应的0.0.0.0未指定地址&lt;/p&gt;
+&lt;p&gt;IPv6地址后面的/56表示前缀长度为56个比特位&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

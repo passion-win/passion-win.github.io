@@ -232,7 +232,50 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#直接本地部署n8n">直接本地部署n8n</a></li>
+            <li><a href="#使用docker部署n8n">使用Docker部署n8n</a></li>
+            <li><a href="#使用docker-compose部署n8n">使用Docker Compose部署n8n</a></li>
+            <li><a href="#crawl4ai">crawl4ai</a></li>
+            <li><a href="#rsshub">RSSHub</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -296,7 +339,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 6 分钟
                 </time>
             </div>
         
@@ -311,10 +354,370 @@
     <section class="article-content">
     
     
-    <p>先下载node</p>
-<p>在win+R   cmd</p>
-<p>输入    npx n8n</p>
+    <h4 id="直接本地部署n8n">直接本地部署n8n
+</h4><p>先下载<code>node</code></p>
+<p><code>win+R</code>  输 <code>cmd</code></p>
+<p>打开管理员权限，切换到淘宝镜像源
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">npm config set registry https://registry.npmmirror.com</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>输入    <code>npx n8n</code>  ，安装好之后每次打开都要重新用这个命令</p>
 <p>等待下载成功</p>
+<p>等待安装结束。如果最终出现类似 <code>n8n ready on http://localhost:5678</code>的提示，说明安装成功，可直接访问该地址使用。</p>
+<h4 id="使用docker部署n8n">使用Docker部署n8n
+</h4><p>使用Docker部署n8n是最推荐和最便捷的方式，因为他提供了环境隔离和易于管理的优势。</p>
+<h5 id="基本部署步骤">基本部署步骤：
+</h5><p>1、安装Docker：确保你的服务器上已经安装了<code>Docker和Docker Compose</code>.</p>
+<p>2、创建数据卷：为了持久化n8n的数据，建议创建一个Docker数据卷。
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">docker volume create n8n_data</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>3、运行n8n容器：使用一下命令运行n8n容器。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>1、<code>-it</code>:交互式运行</p>
+<p>2、<code>--rm</code>:容器停止后自动删除</p>
+<p>3、<code>--name n8n</code>：为容器指定名称</p>
+<p>4、<code>-p 5678:5678</code> :将主机的5678端口映射到容器的5678端口</p>
+<p>5、<code>-v n8n_data:/home/node/.n8n</code>:将<code>n8n_data</code>数据卷挂载到容器内部n8n存储数据的路径</p>
+<p>6、<code>docker.n8n.io/n8nio/n8n</code> : n8n官方Docker镜像</p>
+<p>4、访问n8n界面：部署成功后，通过浏览器访问<code>http://localhost:5678</code> (如果部署在远程服务器，请将localhost 替换为服务器IP地址)</p>
+<p>5、
+第1步：停止所有可能存在的旧容器（以防万一）</p>
+<p>虽然你的容器已经被删除了，但养成一个好习惯总没错。如果万一之前有其他叫 n8n 的容器卡住了，先清理掉它。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">docker stop n8n</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>如果容器不存在，它会报错，没关系，继续下一步。</p>
+<p>第2步：用正确的命令重新启动 n8n</p>
+<p>使用下面的命令，它包含了之前所有的核心参数，但移除了 &ndash;rm，并添加了 -d。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">docker run -d --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Docker 返回了一长串字符 faeb14a55b7f1&hellip;，这是你的新创建的容器的 唯一ID (Container ID)。然后命令行立刻返回到了,这表明 <code>docker run </code>命令已经成功完成，而你的 <code>n8n</code></p>
+<p>命令解释：</p>
+<p><code>-d: Detached mode</code> (分离模式)。这是关键！它会让容器在后台运行，你的命令行窗口会立刻返回，你可以继续做其他事情，而 n8n 服务会一直在后台为你工作。</p>
+<p><code>--name n8n</code>: 给容器起名为 <code>n8n</code>。</p>
+<p><code>-p 5678:5678</code>: 端口映射，保证你能访问。</p>
+<p><code>-v n8n_data:/home/node/.n8n</code>: 数据持久化，保证你的数据不丢失。</p>
+<p><code>docker.n8n.io/n8nio/n8n</code>: 镜像名称。</p>
+<p>运行这个命令后，你会立刻回到命令行提示符，而 n8n 已经在后台启动了。</p>
+<p>第3步：验证 n8n 是否正在运行</p>
+<p>现在，运行以下命令来检查：
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">docker ps</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>你应该会看到类似下面的输出，这证明你的 n8n 容器正在后台运行：</p>
+<p><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">CONTAINER ID   IMAGE                               COMMAND                  CREATED         STATUS         
+</span></span><span class="line"><span class="cl">PORTS                    NAMES
+</span></span><span class="line"><span class="cl">xxxxxxxxxxxx   docker.n8n.io/n8nio/n8n:latest      &#34;docker-entrypoint.s…&#34;   5 seconds ago   Up 4 seconds   0.0.0.0:5678-&gt;5678/
+</span></span><span class="line"><span class="cl">tcp   n8n
+</span></span><span class="line"><span class="cl">STATUS 一列显示 Up X seconds，表示容器正在运行。
+</span></span><span class="line"><span class="cl">NAMES 一列显示 n8n，说明你成功启动了那个容器。</span></span></code></pre></td></tr></table>
+</div>
+</div>
+第4步：从此以后，如何管理你的 n8n？</p>
+<p>现在你有了一个稳定运行在后台的容器，以后的管理就非常简单了：</p>
+<p>查看 n8n 日志 (非常有用，能看到运行状态和错误):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">docker logs n8n</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>如果想实时跟踪日志（就像你第一次看到的那样），加上 -f：
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">docker logs -f n8n</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>停止 n8n:
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">docker stop n8n</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>执行后，n8n 服务会停止，但容器本身还存在，数据也还在。</p>
+<p>重新启动 n8n (如果它被停止了):
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">docker start n8n</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>升级 n8n (如果想升级到新版本):</p>
+<p>先停止容器：</p>
+<p><code>docker stop n8n</code></p>
+<p>删除旧容器：</p>
+<p><code>docker rm n8n</code></p>
+<p>用新的镜像名重新运行（比如 n8nio/n8n:latest）：</p>
+<p><code>docker run -d --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n</code></p>
+<h4 id="使用docker-compose部署n8n">使用Docker Compose部署n8n
+</h4><p>1、创建 <code>docker-compose.yml</code>文件：
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">version: &#39;3.8&#39;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">services:
+</span></span><span class="line"><span class="cl"> n8n:
+</span></span><span class="line"><span class="cl">   image: docker.n8n.io/n8nio/n8n
+</span></span><span class="line"><span class="cl">   restart: always
+</span></span><span class="line"><span class="cl">   ports:
+</span></span><span class="line"><span class="cl">     - &#34;5678:5678&#34;
+</span></span><span class="line"><span class="cl">   volumes:
+</span></span><span class="line"><span class="cl">     - n8n_data:/home/node/.n8n
+</span></span><span class="line"><span class="cl">   environment:
+</span></span><span class="line"><span class="cl">     - N8N_BASIC_AUTH_ACTIVE=true
+</span></span><span class="line"><span class="cl">     - N8N_BASIC_AUTH_USER=user
+</span></span><span class="line"><span class="cl">     - N8N_BASIC_AUTH_PASSWORD=password
+</span></span><span class="line"><span class="cl">     - N8N_EDITOR_BASE_URL=http://localhost:5678/ # 根据实际情况修改
+</span></span><span class="line"><span class="cl">     - GENERIC_TIMEZONE=Asia/Shanghai # 设置时区
+</span></span><span class="line"><span class="cl">     - TZ=Asia/Shanghai # 设置时区
+</span></span><span class="line"><span class="cl">     # - N8N_EMAIL_MODE=smtp # 邮件配置示例
+</span></span><span class="line"><span class="cl">     # - N8N_SMTP_HOST=smtp.example.com
+</span></span><span class="line"><span class="cl">     # - N8N_SMTP_PORT=587
+</span></span><span class="line"><span class="cl">     # - N8N_SMTP_USER=your_email@example.com
+</span></span><span class="line"><span class="cl">     # - N8N_SMTP_PASS=your_email_password
+</span></span><span class="line"><span class="cl">     # - N8N_SMTP_SENDER=your_email@example.com
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">volumes:
+</span></span><span class="line"><span class="cl"> n8n_data:</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>1、可以根据需要添加环境变量，例如设置用户名密码、时区、邮件服务等</p>
+<p>2、启动服务：在<code>docker-compose.yml</code>文件所在目录执行
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">docker-compose up -d</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<h5 id="使用docker-compose部署汉化版本">使用Docker Compose部署汉化版本
+</h5><p>直接在 docker-compose.yml 文件中配置汉化：
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">version: &#39;3.8&#39;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">services:
+</span></span><span class="line"><span class="cl">  n8n:
+</span></span><span class="line"><span class="cl">    image: docker.n8n.io/n8nio/n8n
+</span></span><span class="line"><span class="cl">    restart: always
+</span></span><span class="line"><span class="cl">    ports:
+</span></span><span class="line"><span class="cl">      - &#34;5678:5678&#34;
+</span></span><span class="line"><span class="cl">    volumes:
+</span></span><span class="line"><span class="cl">      - n8n_data:/home/node/.n8n
+</span></span><span class="line"><span class="cl">      - ./editor-ui:/usr/local/lib/node_modules/n8n/dist/packages/editor-ui/dist
+</span></span><span class="line"><span class="cl">    environment:
+</span></span><span class="line"><span class="cl">      - N8N_BASIC_AUTH_ACTIVE=true
+</span></span><span class="line"><span class="cl">      - N8N_BASIC_AUTH_USER=user
+</span></span><span class="line"><span class="cl">      - N8N_BASIC_AUTH_PASSWORD=password
+</span></span><span class="line"><span class="cl">      - N8N_EDITOR_BASE_URL=http://localhost:5678/
+</span></span><span class="line"><span class="cl">      - GENERIC_TIMEZONE=Asia/Shanghai
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">volumes:
+</span></span><span class="line"><span class="cl">  n8n_data:</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>汉化注意事项</p>
+<p>版本匹配：确保下载的汉化包版本与你使用的 n8n 版本匹配，否则可能会导致界面显示异常。</p>
+<p>升级时的处理：在升级 n8n 版本时，需要重新下载对应版本的汉化包并替换原有的汉化文件。</p>
+<p>权限问题：如果遇到权限问题，可能需要调整汉化文件的权限：
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">chmod -R 755 ./editor-ui</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>使用官方国际化：随着 n8n 的发展，官方可能会增加对中文的支持，届时可以直接使用官方的国际化方案，无需手动汉化。</p>
+<p>部署 <code>unclecode/crawl4ai</code>，需按拉取镜像→配置运行→访问使用的流程操作
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">docker pull unclecode/crawl4ai:all-amd64</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>先检查本地是否已存在 <code>crawl4ai:all-amd64 </code>镜像：
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">docker images | grep crawl4ai</span></span></code></pre></td></tr></table>
+</div>
+</div>
+若能看到 unclecode/crawl4ai 且标签为 all-amd64，则镜像拉取成功。</p>
+<h4 id="crawl4ai">crawl4ai
+</h4><p>部署 <code>unclecode/crawl4ai</code>，需按拉取镜像→配置运行→访问使用的流程操作
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">docker pull unclecode/crawl4ai:all-amd64</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>先检查本地是否已存在 <code>crawl4ai:all-amd64 </code>镜像：
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">docker images | grep crawl4ai</span></span></code></pre></td></tr></table>
+</div>
+</div>
+若能看到 unclecode/crawl4ai 且标签为 all-amd64，则镜像拉取成功。</p>
+<p>是 LLM 友好的爬虫工具，需配置端口、LLM 密钥、数据持久化等参数，命令如下：
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"># 提前创建本地数据目录（用于持久化爬虫结果、配置）
+</span></span><span class="line"><span class="cl">mkdir -p ./crawl4ai-data
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 启动容器（替换 YOUR_OPENAI_KEY 为实际密钥，若用其他 LLM 需调整环境变量）
+</span></span><span class="line"><span class="cl">docker run -d \
+</span></span><span class="line"><span class="cl">  -p 3000:3000 \  # 端口映射，本地访问 http://localhost:3000
+</span></span><span class="line"><span class="cl">  -e OPENAI_API_KEY=YOUR_OPENAI_KEY \  # LLM 密钥（必填，用于 AI 相关功能）
+</span></span><span class="line"><span class="cl">  -v ./crawl4ai-data:/app/data \  # 挂载本地目录，持久化数据
+</span></span><span class="line"><span class="cl">  unclecode/crawl4ai:all-amd64</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>访问并使用 <code>crawl4ai</code></p>
+<p>容器启动后，打开浏览器访问：</p>
+<p>http://localhost:3000</p>
+<p>即可进入 <code>crawl4ai</code> 的 <code>Web</code> 界面，按以下流程开始使用：</p>
+<p>配置爬虫任务：输入目标网站 URL、爬取规则（如允许的域名、深度）。</p>
+<p>关联 LLM 能力：利用内置的 AI 功能（如内容提取、表格识别、文本总结）。</p>
+<p>启动爬取：点击 “开始” 按钮，任务结果会存储在本地 <code>./crawl4ai-data</code> 目录中。</p>
+<h4 id="rsshub">RSSHub
+</h4><p><a class="link" href="https://docs.rsshub.app"  target="_blank" rel="noopener"
+    >官网网址</a></p>
+<p>步骤 1：确认 Docker Desktop 是否启动并正常运行</p>
+<p>打开Docker Desktop应用，检查其是否处于 “运行中” 状态。如果未启动，启动它；如果处于异常状态（如卡住、报错），尝试重启 Docker Desktop。</p>
+<p>步骤 2：确认容器模式为 “Linux 容器”</p>
+<p>RSSHub 的镜像基于 Linux 系统，需确保 Docker Desktop 的容器模式为Linux 容器（而非 Windows 容器）。</p>
+<p>在 Docker Desktop 右下角图标上右键，选择 <strong>“Switch to Linux Containers&hellip;”</strong>（如果当前是 Windows 容器模式），完成切换后重启 Docker Desktop。</p>
+<p>步骤 3：重启 Docker 服务</p>
+<p>按下Win+R，输入services.msc，找到 <strong>“Docker Desktop Service”，右键选择“重启”</strong>。</p>
+<p>步骤 4：再次执行docker-compose up -d</p>
+<p>重启 Docker 服务后，回到 PowerShell（确保路径仍为D:\RSSHub\rsshub），再次执行命令：</p>
+<p><code>docker-compose up -d</code></p>
 
 </section>
 
@@ -348,6 +751,19 @@
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/ipv6/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">IPV6</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="">
@@ -407,30 +823,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Emoji Support</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/test-chinese/">
-        
-        
-            <div class="article-image">
-                <img src="/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.46f61e8ea6a2df8fc5bf1d24a17c44a6_hu_57b7cab9514860c.jpg" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Chinese Test"
-                        data-key="test-chinese" 
-                        data-hash="md5-RvYejqai34/Fvx0koXxEpg==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Chinese Test</h2>
         </div>
     </a>
 </article>
