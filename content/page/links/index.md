@@ -34,7 +34,9 @@ links:
     description: 查看别人的IP是在哪个商家的VPS购买
     website: https://ipinfo.io
 
-
+  - title: IPV6
+    description: 查看公网IPV6
+    website: https://ipw.cn/ipv6/
 
 
 
