@@ -2,8 +2,8 @@
 baseurl: "http://localhost:1313/"  # 本地开发地址，部署时替换为实际域名
 languageCode: "zh-CN"              # 站点主要语言
 theme: "stack"              # 主题名称（确保与主题文件夹名一致）
-title: "你的博客名称"              # 自定义博客标题
-copyright: "© 2025 你的名字. 保留所有权利."  # 版权信息
+title: "win"              # 自定义博客标题
+copyright: "© 2025 win. 保留所有权利."  # 版权信息
 
 # 国际化配置
 DefaultContentLanguage: zh-cn      # 默认内容语言
@@ -13,14 +13,14 @@ hasCJKLanguage: true               # 启用CJK语言支持（中文/日文/韩�
 languages:
     zh-cn:
         languageName: 中文
-        title: 你的博客名称
+        title: win
         weight: 1
         params:
             sidebar:
-                subtitle: 分享技术与生活的个人博客  # 侧边栏副标题
+                subtitle: 分享技术与生活  # 侧边栏副标题
     en:
         languageName: English
-        title: Your Blog Name
+        title: win
         weight: 2
         params:
             sidebar:
@@ -63,7 +63,7 @@ params:
     # 侧边栏设置
     sidebar:
         emoji: "✍️"  # 侧边栏图标表情
-        subtitle: 分享技术与生活的个人博客  # 侧边栏副标题
+        subtitle: 分享技术与生活  # 侧边栏副标题
         avatar:
             enabled: true              # 显示头像
             local: true                # 使用本地图片

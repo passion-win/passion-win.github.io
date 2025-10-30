@@ -42,6 +42,18 @@
   </url><url>
     <loc>http://localhost:1313/categories/v2rayn%E6%95%99%E7%A8%8B/</loc>
   </url><url>
+    <loc>http://localhost:1313/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="http://localhost:1313/"
+                />
+  </url><url>
     <loc>http://localhost:1313/posts/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5/</loc>
   </url><url>
     <loc>http://localhost:1313/archives/</loc>
@@ -55,18 +67,6 @@
     <loc>http://localhost:1313/%E9%93%BE%E6%8E%A5/</loc>
   </url><url>
     <loc>http://localhost:1313/posts/%E9%93%BE%E4%B8%8A%E7%A9%BA%E6%8A%95/</loc>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://localhost:1313/"
-                />
   </url><url>
     <loc>http://localhost:1313/search/</loc>
   </url>
