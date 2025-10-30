@@ -14,7 +14,11 @@
                 href="http://localhost:1313/categories/"
                 />
   </url><url>
+    <loc>http://localhost:1313/posts/ipv6/</loc>
+  </url><url>
     <loc>http://localhost:1313/page/</loc>
+  </url><url>
+    <loc>http://localhost:1313/post/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
     <xhtml:link
@@ -28,7 +32,11 @@
                 href="http://localhost:1313/tags/"
                 />
   </url><url>
+    <loc>http://localhost:1313/categories/test/</loc>
+  </url><url>
     <loc>http://localhost:1313/archives/</loc>
+  </url><url>
+    <loc>http://localhost:1313/categories/%E6%95%99%E7%A8%8B/</loc>
   </url><url>
     <loc>http://localhost:1313/%E9%93%BE%E6%8E%A5/</loc>
   </url><url>

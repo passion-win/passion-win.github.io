@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>你的博客名称</title>
-        <link>http://localhost:1313/</link>
-        <description>Recent content on 你的博客名称</description>
+        <title>教程 on 你的博客名称</title>
+        <link>http://localhost:1313/categories/%E6%95%99%E7%A8%8B/</link>
+        <description>Recent content in 教程 on 你的博客名称</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>© 2025 你的名字. 保留所有权利.</copyright><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>© 2025 你的名字. 保留所有权利.</copyright><atom:link href="http://localhost:1313/categories/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>IPV6</title>
         <link>http://localhost:1313/posts/ipv6/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -57,31 +57,6 @@
 	
 &gt;&lt;/p&gt;
 </description>
-        </item>
-        <item>
-        <title>归档</title>
-        <link>http://localhost:1313/archives/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/archives/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>链接</title>
-        <link>http://localhost:1313/%E9%93%BE%E6%8E%A5/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/%E9%93%BE%E6%8E%A5/</guid>
-        <description>&lt;p&gt;好用网站分享&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>搜索</title>
-        <link>http://localhost:1313/search/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/search/</guid>
-        <description></description>
         </item>
         
     </channel>
