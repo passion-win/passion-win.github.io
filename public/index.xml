@@ -6,7 +6,36 @@
         <description>Recent content on win</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>© 2025 win. 保留所有权利.</copyright><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>© 2025 win. 保留所有权利.</copyright>
+        <lastBuildDate>Fri, 31 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>个人介绍</title>
+        <link>http://localhost:1313/about/</link>
+        <pubDate>Fri, 31 Oct 2025 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/about/</guid>
+        <description>&lt;p&gt;你好！我是 win，一名热爱技术与分享的博主。&lt;/p&gt;
+&lt;h2 id=&#34;个人简介&#34;&gt;个人简介
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;专注于网络技术、工具教程等领域&lt;/li&gt;
+&lt;li&gt;喜欢探索实用的技术解决方案，乐于分享踩坑经验&lt;/li&gt;
+&lt;li&gt;希望能帮助更多人解决技术问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;联系方式&#34;&gt;联系方式
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;GitHub(&lt;a class=&#34;link&#34; href=&#34;https://github.com/passion-win&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/passion-win&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;博客说明&#34;&gt;博客说明
+&lt;/h2&gt;&lt;p&gt;这个博客主要用于记录：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;技术&lt;/li&gt;
+&lt;li&gt;实用工具分享&lt;/li&gt;
+&lt;li&gt;日常技术思考与生活感悟&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你觉得内容有帮助，欢迎关注或分享~&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Alpha</title>
         <link>http://localhost:1313/posts/alpha/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -519,15 +548,6 @@
 </description>
         </item>
         <item>
-        <title>链接</title>
-        <link>http://localhost:1313/%E9%93%BE%E6%8E%A5/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/%E9%93%BE%E6%8E%A5/</guid>
-        <description>&lt;p&gt;好用网站分享&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>链上空投</title>
         <link>http://localhost:1313/posts/%E9%93%BE%E4%B8%8A%E7%A9%BA%E6%8A%95/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -564,11 +584,27 @@
 </description>
         </item>
         <item>
+        <title>区块链</title>
+        <link>http://localhost:1313/blockchain/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/blockchain/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>搜索</title>
         <link>http://localhost:1313/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/search/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>网站链接</title>
+        <link>http://localhost:1313/links/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/links/</guid>
         <description></description>
         </item>
         
