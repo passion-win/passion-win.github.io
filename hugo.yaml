@@ -186,10 +186,16 @@ menu:
           params:
               icon: brand-github
         - identifier: twitter
-          name: Twitter
+          name: twitter
           url: "https://twitter.com/@win1688888888"
           params:
               icon: brand-twitter
+
+        - identifier: telegram
+          name: telegram
+          url: "https://t.me/+TFjBeZzowwU1YTY1"
+          params:
+              icon: brand-telegram
 
 # 相关文章设置
 related:

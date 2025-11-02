@@ -15,10 +15,6 @@ draft: false
 - 喜欢探索实用的技术解决方案，乐于分享踩坑经验
 - 希望能帮助更多人解决技术问题
 
-## 联系方式
-
-- GitHub(https://github.com/passion-win)
-
 
 ## 博客说明
 
