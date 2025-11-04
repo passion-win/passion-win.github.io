@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>win</title>
+        <title>JustWin</title>
         <link>http://localhost:1313/</link>
-        <description>Recent content on win</description>
+        <description>Recent content on JustWin</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>© 2025 win. 保留所有权利.</copyright>
@@ -13,7 +13,7 @@
         <pubDate>Fri, 31 Oct 2025 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/about/</guid>
-        <description>&lt;p&gt;你好！我是 win，一名热爱技术与分享的博主。&lt;/p&gt;
+        <description>&lt;p&gt;你好！我是 JustWin，一名热爱技术与分享的博主。&lt;/p&gt;
 &lt;h2 id=&#34;个人简介&#34;&gt;个人简介
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;专注于网络技术、工具教程等领域&lt;/li&gt;

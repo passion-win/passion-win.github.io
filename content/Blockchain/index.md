@@ -16,4 +16,12 @@ links:
   - title: Gate（芝麻）
     description: 下载方法、50%返佣
     website: https://www.gatesites.com/share/VLZEVQXWAW
+ 
+  - title: valuescan
+    description: ai看盘、监控软件
+    website: https://www.valuescan.io/login?inviteCode=LXXZHJ
+
+    
+
+
 ---
