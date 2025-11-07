@@ -3,6 +3,11 @@ title: 网站链接
 links:  
 
 
+  - title: 检测IP
+    description: 检测IP的欺诈值
+    website: https://scamalytics.com
+
+
   - title: 查看IP地址
     description: 查看IP地址
     website: https://www.myip.com
@@ -14,6 +19,15 @@ links:
   - title: 查找地址
     description: 通过IP查找地址
     website: https://ip-api.com
+
+  - title: 检测URL、域名、IP地址或文件哈希
+    description: 创建时间、用的DNS
+    website: https://www.virustotal.com/gui/domain
+
+
+  - title: 探测
+    description: 检查自己的域名/后台/接口 
+    website: https://fofa.info
     
   - title: IPV6
     description: IPV6转换、证书分发
@@ -34,24 +48,22 @@ links:
     website: https://www.iios.fun/#/r/BLU8AT
   - title: 图床
     description: 免费图床
-    website: https://telegraph-image-5tj.pages.dev/
+    website: https://telegraph-image-5tj.pages.dev
     
   - title: 虚拟身份
     description: 海外虚拟身份证
-    website: https://www.fakepersongenerator.com/
+    website: https://www.fakepersongenerator.com
 
   - title: 域名
     description: US.KG域名申请
-    website: https://domain.digitalplat.org/
+    website: https://domain.digitalplat.org
 
 
   - title: uuid
     description: 生成器
     website: https://1024tools.com/uuid
 
-  - title: 检测IP
-    description: 检测IP的欺诈值
-    website: https://scamalytics.com/
+
 
   - title: VPS
     description: 查看别人的IP是在哪个商家的VPS购买
@@ -70,7 +82,7 @@ links:
 
   - title: 镜像
     description: 清华大学镜像站
-    website: https://mirrors.tuna.tsinghua.edu.cn/
+    website: https://mirrors.tuna.tsinghua.edu.cn
 
 
 
